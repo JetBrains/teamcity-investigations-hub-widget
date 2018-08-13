@@ -1,0 +1,11 @@
+{
+  "key": "team-city-investigations",
+  "name": "TeamCity investigations",
+  "version": "1.0.0",
+  "description": "Hub dashboard widget to show the list of assigned investigations from TeamCity",
+  "author": "Maxim Mazin &lt;maxim.mazin@jetbrains.com&gt;",
+  "products": {
+    "Hub": "2018.1",
+    "YouTrack": "2018.1"
+  }
+}
