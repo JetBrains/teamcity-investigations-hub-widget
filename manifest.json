@@ -3,7 +3,7 @@
   "name": "TeamCity Investigations",
   "version": "1.0.0",
   "description": "Hub dashboard widget to show the list of assigned investigations from TeamCity",
-  "author": "Maxim Mazin &lt;maxim.mazin@jetbrains.com&gt;",
+  "author": "mazine",
   "products": {
     "Hub": "2018.1",
     "TeamCity": "2017.2"
