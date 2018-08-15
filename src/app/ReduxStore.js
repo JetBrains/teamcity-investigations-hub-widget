@@ -14,31 +14,25 @@ export const selectColor = createAction();
 export const applyConfiguration = createAction();
 export const closeConfiguration = createAction();
 
-export const saveConfiguration = dashboardApi => {
-  return async (dispatch, getState) => {
-    const {editedConfiguration} = getState();
-    await dashboardApi.storeConfig(editedConfiguration);
-    await dispatch(applyConfiguration());
-    await dispatch(closeConfiguration());
-  };
+export const saveConfiguration = dashboardApi => async (dispatch, getState) => {
+  const {editedConfiguration} = getState();
+  await dashboardApi.storeConfig(editedConfiguration);
+  await dispatch(applyConfiguration());
+  await dispatch(closeConfiguration());
 };
 
-export const cancelConfiguration = dashboardApi => {
-  return async dispatch => {
-    await dashboardApi.exitConfigMode();
-    await dispatch(closeConfiguration());
-  };
+export const cancelConfiguration = dashboardApi => async dispatch => {
+  await dashboardApi.exitConfigMode();
+  await dispatch(closeConfiguration());
 };
 
-export const initWidget = (dashboardApi, registerWidgetApi) => {
-  return async dispatch => {
-    registerWidgetApi({
-      onConfigure: () => dispatch(openConfiguration())
-    });
-    const initialConfiguration = (await dashboardApi.readConfig())
-      || {selectedColor: COLOR_OPTIONS[0]};
-    return dispatch(setInitialConfiguration(initialConfiguration));
-  };
+export const initWidget = (dashboardApi, registerWidgetApi) => async dispatch => {
+  registerWidgetApi({
+    onConfigure: () => dispatch(openConfiguration())
+  });
+  const initialConfiguration = (await dashboardApi.readConfig()) ||
+      {selectedColor: COLOR_OPTIONS[0]};
+  return dispatch(setInitialConfiguration(initialConfiguration));
 };
 
 const reducer = createReducer({
@@ -68,7 +62,7 @@ const reducer = createReducer({
 }, {
   editedConfiguration: null,
   configuration: {
-    selectedColor: COLOR_OPTIONS[0],
+    selectedColor: COLOR_OPTIONS[0]
   }
 });
 

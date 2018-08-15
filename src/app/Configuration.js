@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Select from '@jetbrains/ring-ui/components/select/select';
+import Panel from '@jetbrains/ring-ui/components/panel/panel';
+import Button from '@jetbrains/ring-ui/components/button/button';
+
 import styles from './app.css';
-import Select from "@jetbrains/ring-ui/components/select/select";
-import Panel from "@jetbrains/ring-ui/components/panel/panel";
-import Button from "@jetbrains/ring-ui/components/button/button";
 
 const Configuration = (
   {
