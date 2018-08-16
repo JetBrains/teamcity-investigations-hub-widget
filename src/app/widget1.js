@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ContentContainer from './ContentContainer';
-import ConfigurationContainer from './ConfigurationContainer';
+import ContentContainer from './content-container';
+import ConfigurationContainer from './configuration-container';
 
 const Widget = ({dashboardApi, isConfiguring}) => {
   if (isConfiguring) {

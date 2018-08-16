@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
-
 import {connect} from 'react-redux';
 
+import {COLOR_OPTIONS} from './redux/index';
+
 import {
-  COLOR_OPTIONS,
   selectColor,
   cancelConfiguration,
   saveConfiguration
-} from './ReduxStore';
-import Configuration from './Configuration';
+} from './redux/actions';
+
+import Configuration from './configuration1';
 
 const ConfigurationContainer = connect(
   state => ({

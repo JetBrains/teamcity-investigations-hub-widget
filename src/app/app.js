@@ -6,8 +6,9 @@ import {render} from 'react-dom';
 
 import 'file-loader?name=[name].[ext]!../../manifest.json'; // eslint-disable-line import/no-unresolved
 
-import createStore, {initWidget} from './ReduxStore';
-import WidgetContainer from './WidgetContainer';
+import createStore from './redux/index';
+import {initWidget} from './redux/actions';
+import WidgetContainer from './widget-container';
 
 DashboardAddons.registerWidget((dashboardApi, registerWidgetApi) => {
   const store = createStore();

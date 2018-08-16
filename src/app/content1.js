@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './app.css';
-import sayHello from './sayHello';
+import sayHello from './say-hello';
 
 const Content = ({selectedColor}) => (
   <div className={styles.widget}>

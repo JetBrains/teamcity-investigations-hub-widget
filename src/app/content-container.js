@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 
-import Content from './Content';
+import Content from './content1';
 
 const ContentContainer = connect(
   state => ({
