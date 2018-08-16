@@ -9,7 +9,7 @@ import {
   saveConfiguration
 } from './redux/actions';
 
-import Configuration from './configuration1';
+import Configuration from './configuration';
 
 const ConfigurationContainer = connect(
   state => ({

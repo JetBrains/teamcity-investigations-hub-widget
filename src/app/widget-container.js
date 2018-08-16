@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import {connect} from 'react-redux';
 
-import Widget from './widget1';
+import Widget from './widget';
 
 const WidgetContainer = connect(
   (state, {dashboardApi}) => ({
