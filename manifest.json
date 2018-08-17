@@ -5,7 +5,10 @@
   "description": "Hub dashboard widget to show the list of assigned investigations from TeamCity",
   "author": "mazine",
   "products": {
-    "Hub": "2018.1",
-    "TeamCity": "2017.2"
+    "Hub": ">=2018.1",
+    "TeamCity": ">=2017.2"
+  },
+  "dependencies": {
+    "Hub": ">=2017.1"
   }
 }

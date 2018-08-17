@@ -1,19 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './app.css';
-import sayHello from './say-hello';
+import Link from '@jetbrains/ring-ui/components/link/link';
 
-const Content = ({selectedColor}) => (
+import styles from './app.css';
+
+const renderNotConfiguredService = onConfigure => (
+  <span>
+    {'TeamCity service to get investigations from, it not configuration yet. Please, '}
+    <Link
+      onClick={onConfigure}
+    >{'select the service.'}</Link>
+  </span>
+);
+
+const Content = ({teamcityService, onConfigure}) => (
   <div className={styles.widget}>
-    <h1 style={{color: selectedColor.key}}>{sayHello()}</h1>
-    <p>{'Select "Edit..." option in widget dropdown to configure text color'}</p>
+    {teamcityService ? teamcityService.name : renderNotConfiguredService(onConfigure)}
   </div>
 );
 
-
 Content.propTypes = {
-  selectedColor: PropTypes.object.isRequired
+  teamcityService: PropTypes.object,
+  onConfigure: PropTypes.func.isRequired
 };
 
 export default Content;

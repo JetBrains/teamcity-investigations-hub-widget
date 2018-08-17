@@ -1,49 +1,70 @@
-import {applyMiddleware, createStore, compose} from 'redux';
+import {applyMiddleware, compose, createStore} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import {createReducer} from 'redux-act';
 
 import {
-  setInitialConfiguration,
-  openConfiguration,
-  selectColor,
   applyConfiguration,
-  closeConfiguration
+  closeConfiguration,
+  finishedTeamcityServicesLoading,
+  openConfiguration,
+  selectTeamcityService,
+  setInitialSettings,
+  startedTeamcityServicesLoading
 } from './actions';
 
-export const COLOR_OPTIONS = [
-  {key: 'black', label: 'Black'},
-  {key: 'red', label: 'Red'},
-  {key: 'blue', label: 'Blue'}
-];
-
 const reduce = createReducer({
-  [setInitialConfiguration]: (state, initialConfiguration) => ({
+  [setInitialSettings]: (state, teamcityService) => ({
     ...state,
-    configuration: initialConfiguration || {selectedColor: COLOR_OPTIONS[0]}
+    teamcityService
   }),
   [openConfiguration]: state => ({
     ...state,
-    editedConfiguration: {...state.configuration}
+    configuration: {
+      ...state.configuration,
+      isConfiguring: true,
+      selectTeamcityService: state.teamcityService
+    }
   }),
-  [selectColor]: (state, selectedColor) => ({
+  [startedTeamcityServicesLoading]: state => ({
     ...state,
-    editedConfiguration: {
-      ...state.editedConfiguration,
-      selectedColor
+    configuration: {
+      ...state.configuration,
+      isLoadingServices: true
+    }
+  }),
+  [finishedTeamcityServicesLoading]: (state, services) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      isLoadingServices: false,
+      teamcityServices: services
+    }
+  }),
+  [selectTeamcityService]: (state, selectedService) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      selectedTeamcityService: selectedService
     }
   }),
   [applyConfiguration]: state => ({
     ...state,
-    configuration: {...state.editedConfiguration}
+    teamcityService: state.configuration.selectedTeamcityService
   }),
   [closeConfiguration]: state => ({
     ...state,
-    editedConfiguration: null
+    configuration: {
+      ...state.configuration,
+      isConfiguring: false
+    }
   })
 }, {
-  editedConfiguration: null,
+  teamcityService: null,
   configuration: {
-    selectedColor: COLOR_OPTIONS[0]
+    isConfiguring: false,
+    isLoadingServices: false,
+    teamcityServices: [],
+    selectedTeamcityService: null
   }
 });
 

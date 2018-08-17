@@ -7,7 +7,7 @@ import Widget from './widget';
 const WidgetContainer = connect(
   (state, {dashboardApi}) => ({
     dashboardApi,
-    isConfiguring: state.editedConfiguration != null
+    isConfiguring: state.configuration.isConfiguring
   }))(Widget);
 
 WidgetContainer.propTypes = {

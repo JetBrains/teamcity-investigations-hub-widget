@@ -1,23 +1,15 @@
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {COLOR_OPTIONS} from './redux/index';
-
-import {
-  selectColor,
-  cancelConfiguration,
-  saveConfiguration
-} from './redux/actions';
+import {cancelConfiguration, saveConfiguration} from './redux/actions';
 
 import Configuration from './configuration';
 
 const ConfigurationContainer = connect(
-  state => ({
-    colorOptions: COLOR_OPTIONS,
-    selectedColor: state.editedConfiguration.selectedColor
+  (state, {dashboardApi}) => ({
+    dashboardApi
   }),
   (dispatch, {dashboardApi}) => ({
-    onColorChange: selectedColor => dispatch(selectColor(selectedColor)),
     onConfigSave: () => dispatch(saveConfiguration(dashboardApi)),
     onConfigCancel: () => dispatch(cancelConfiguration(dashboardApi))
   })

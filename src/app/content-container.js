@@ -2,10 +2,16 @@ import {connect} from 'react-redux';
 
 import Content from './content';
 
+import {openConfiguration} from './redux/actions';
+
 const ContentContainer = connect(
   state => ({
-    selectedColor: state.configuration.selectedColor
-  }))(Content);
+    teamcityService: state.teamcityService
+  }),
+  dispatch => ({
+    onConfigure: () => dispatch(openConfiguration())
+  })
+)(Content);
 
 ContentContainer.propTypes = {};
 

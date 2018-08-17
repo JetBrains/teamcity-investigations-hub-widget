@@ -1,28 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import Select from '@jetbrains/ring-ui/components/select/select';
 import Panel from '@jetbrains/ring-ui/components/panel/panel';
 import Button from '@jetbrains/ring-ui/components/button/button';
 
 import styles from './app.css';
+import ServiceSelect from './service-select';
 
 const Configuration = (
   {
-    colorOptions,
-    selectedColor,
-    onColorChange,
+    dashboardApi,
     onConfigSave,
     onConfigCancel
   }
 ) => (
   <div className={styles.widget}>
-    <Select
-      data={colorOptions}
-      selected={selectedColor}
-      onChange={onColorChange}
-      label="Select text color"
-    />
+    <ServiceSelect dashboardApi={dashboardApi}/>
     <Panel>
       <Button primary={true} onClick={onConfigSave}>{'Save'}</Button>
       <Button onClick={onConfigCancel}>{'Cancel'}</Button>
@@ -30,11 +22,8 @@ const Configuration = (
   </div>
 );
 
-
 Configuration.propTypes = {
-  colorOptions: PropTypes.array.isRequired,
-  selectedColor: PropTypes.object.isRequired,
-  onColorChange: PropTypes.func.isRequired,
+  dashboardApi: PropTypes.object.isRequired,
   onConfigSave: PropTypes.func.isRequired,
   onConfigCancel: PropTypes.func.isRequired
 };
