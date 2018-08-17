@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Link from '@jetbrains/ring-ui/components/link/link';
 
 import styles from './app.css';
+import EmptyWidget from './empty-widget';
 
 const renderNotConfiguredService = onConfigure => (
   <span>
@@ -14,14 +15,28 @@ const renderNotConfiguredService = onConfigure => (
   </span>
 );
 
-const Content = ({teamcityService, onConfigure}) => (
+const renderEmpty = () => (
+  <EmptyWidget header={'(⌒‿⌒)'}>
+    {'No investigations'}
+    <br/>
+    {'are assigned to you'}
+  </EmptyWidget>
+);
+
+const Content = ({teamcityService, investigations, onConfigure}) => (
   <div className={styles.widget}>
-    {teamcityService ? teamcityService.name : renderNotConfiguredService(onConfigure)}
+    {!teamcityService
+      ? renderNotConfiguredService(onConfigure)
+      : investigations.length === 0
+        ? renderEmpty()
+        : teamcityService.name
+    }
   </div>
 );
 
 Content.propTypes = {
   teamcityService: PropTypes.object,
+  investigations: PropTypes.array.isRequired,
   onConfigure: PropTypes.func.isRequired
 };
 

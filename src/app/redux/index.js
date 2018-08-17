@@ -60,6 +60,7 @@ const reduce = createReducer({
   })
 }, {
   teamcityService: null,
+  investigations: [],
   configuration: {
     isConfiguring: false,
     isLoadingServices: false,
