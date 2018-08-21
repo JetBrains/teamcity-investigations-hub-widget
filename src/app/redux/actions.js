@@ -22,6 +22,7 @@ export const loadInvestigations = (dashboardApi, teamcityService) => async dispa
   dashboardApi.setLoadingAnimationEnabled(true);
   const server = new TeamcityService(dashboardApi);
   const investigations = await server.getMyInvestigations(teamcityService);
+  await dashboardApi.storeCache(investigations);
   await dispatch(finishedInvestigationsLoading(investigations));
   dashboardApi.setLoadingAnimationEnabled(false);
 };
@@ -52,7 +53,11 @@ export const initWidget = (dashboardApi, registerWidgetApi) => async dispatch =>
     onRefresh: () => dispatch(reloadInvestigations(dashboardApi))
   });
   const teamcityService = await dashboardApi.readConfig();
-  await dispatch(setInitialSettings(teamcityService));
+  const cache = await dashboardApi.readCache();
+  await dispatch(setInitialSettings({
+    teamcityService,
+    investigations: cache.result
+  }));
   await dispatch(reloadInvestigations(dashboardApi));
 };
 

@@ -15,9 +15,10 @@ import {
 } from './actions';
 
 const reduce = createReducer({
-  [setInitialSettings]: (state, teamcityService) => ({
+  [setInitialSettings]: (state, {teamcityService, investigations}) => ({
     ...state,
-    teamcityService
+    teamcityService,
+    investigations: investigations || []
   }),
   [openConfiguration]: state => ({
     ...state,
