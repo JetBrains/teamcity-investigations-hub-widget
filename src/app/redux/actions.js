@@ -53,10 +53,10 @@ export const initWidget = (dashboardApi, registerWidgetApi) => async dispatch =>
     onRefresh: () => dispatch(reloadInvestigations(dashboardApi))
   });
   const teamcityService = await dashboardApi.readConfig();
-  const cache = await dashboardApi.readCache();
+  const {result: investigations} = await dashboardApi.readCache();
   await dispatch(setInitialSettings({
     teamcityService,
-    investigations: cache.result
+    investigations
   }));
   await dispatch(reloadInvestigations(dashboardApi));
 };
