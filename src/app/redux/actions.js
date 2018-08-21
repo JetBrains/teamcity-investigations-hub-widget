@@ -19,9 +19,11 @@ export const finishedInvestigationsLoading =
 export const loadInvestigations = (dashboardApi, teamcityService) => async dispatch => {
   await dispatch(startedInvestigationsLoading());
 
+  dashboardApi.setLoadingAnimationEnabled(true);
   const server = new TeamcityService(dashboardApi);
   const investigations = await server.getMyInvestigations(teamcityService);
   await dispatch(finishedInvestigationsLoading(investigations));
+  dashboardApi.setLoadingAnimationEnabled(false);
 };
 
 export const reloadInvestigations = dashboardApi => async (dispatch, getState) => {

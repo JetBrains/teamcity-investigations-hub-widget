@@ -60,19 +60,14 @@ const reduce = createReducer({
       isConfiguring: false
     }
   }),
-  [startedInvestigationsLoading]: state => ({
-    ...state,
-    isLoadingInvestigations: true
-  }),
+  [startedInvestigationsLoading]: state => state,
   [finishedInvestigationsLoading]: (state, investigations) => ({
     ...state,
-    isLoadingInvestigations: false,
     investigations
   })
 }, {
-  teamcityService: null,
+  teamcityService: {},
   investigations: [],
-  isLoadingInvestigations: false,
   configuration: {
     isConfiguring: false,
     isLoadingServices: false,
