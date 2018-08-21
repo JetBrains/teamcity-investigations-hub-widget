@@ -6,16 +6,17 @@ import numberToSuperDigits from '../number-to-super-digits';
 export const setInitialSettings = createAction('Set initial settings');
 export const openConfiguration = createAction('Open configuration mode');
 export const selectTeamcityService = createAction('Select TeamCity service');
+export const updateRefreshPeriod = createAction('Update refresh period');
 export const startedTeamcityServicesLoading =
-    createAction('Started loading list of TeamCity services');
+  createAction('Started loading list of TeamCity services');
 export const finishedTeamcityServicesLoading =
-    createAction('Finished loading list of TeamCity services');
+  createAction('Finished loading list of TeamCity services');
 export const applyConfiguration = createAction('Apply configuration');
 export const closeConfiguration = createAction('Close configuration mode');
 export const startedInvestigationsLoading =
-    createAction('Started loading list of investigations');
+  createAction('Started loading list of investigations');
 export const finishedInvestigationsLoading =
-    createAction('Finished loading list of investigations');
+  createAction('Finished loading list of investigations');
 
 async function setWidgetTitle(dashboardApi, count) {
   await dashboardApi.setTitle(`TeamCity Investigations ${numberToSuperDigits(count)}`);
@@ -41,8 +42,11 @@ export const reloadInvestigations = dashboardApi => async (dispatch, getState) =
 };
 
 export const saveConfiguration = dashboardApi => async (dispatch, getState) => {
-  const {configuration: {selectedTeamcityService}} = getState();
-  await dashboardApi.storeConfig(selectedTeamcityService);
+  const {configuration: {selectedTeamcityService, refreshPeriod}} = getState();
+  await dashboardApi.storeConfig({
+    teamcityService: selectedTeamcityService,
+    refreshPeriod
+  });
   await dispatch(applyConfiguration());
   await dispatch(closeConfiguration());
   await dispatch(loadInvestigations(dashboardApi, selectedTeamcityService));
@@ -58,10 +62,11 @@ export const initWidget = (dashboardApi, registerWidgetApi) => async dispatch =>
     onConfigure: () => dispatch(openConfiguration()),
     onRefresh: () => dispatch(reloadInvestigations(dashboardApi))
   });
-  const teamcityService = await dashboardApi.readConfig();
-  const {result: {data: investigations, count}} = await dashboardApi.readCache();
+  const {teamcityService, refreshPeriod} = (await dashboardApi.readConfig()) || {};
+  const {result: {data: investigations, count}} = (await dashboardApi.readCache()) || {result: {}};
   await dispatch(setInitialSettings({
     teamcityService,
+    refreshPeriod,
     investigations
   }));
   await setWidgetTitle(dashboardApi, count);

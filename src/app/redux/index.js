@@ -11,13 +11,18 @@ import {
   selectTeamcityService,
   setInitialSettings,
   startedInvestigationsLoading,
-  finishedInvestigationsLoading
+  finishedInvestigationsLoading,
+  updateRefreshPeriod
 } from './actions';
 
+// eslint-disable-next-line no-magic-numbers
+const DEFAULT_PERIOD = 300;
+
 const reduce = createReducer({
-  [setInitialSettings]: (state, {teamcityService, investigations}) => ({
+  [setInitialSettings]: (state, {teamcityService, refreshPeriod, investigations}) => ({
     ...state,
     teamcityService,
+    refreshPeriod: refreshPeriod || DEFAULT_PERIOD,
     investigations: investigations || []
   }),
   [openConfiguration]: state => ({
@@ -25,7 +30,8 @@ const reduce = createReducer({
     configuration: {
       ...state.configuration,
       isConfiguring: true,
-      selectedTeamcityService: state.teamcityService
+      selectedTeamcityService: state.teamcityService,
+      refreshPeriod: state.refreshPeriod
     }
   }),
   [startedTeamcityServicesLoading]: state => ({
@@ -50,9 +56,17 @@ const reduce = createReducer({
       selectedTeamcityService: selectedService
     }
   }),
+  [updateRefreshPeriod]: (state, refreshPeriod) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      refreshPeriod
+    }
+  }),
   [applyConfiguration]: state => ({
     ...state,
-    teamcityService: state.configuration.selectedTeamcityService
+    teamcityService: state.configuration.selectedTeamcityService,
+    refreshPeriod: state.configuration.refreshPeriod
   }),
   [closeConfiguration]: state => ({
     ...state,
@@ -69,11 +83,13 @@ const reduce = createReducer({
 }, {
   teamcityService: {},
   investigations: [],
+  refreshPeriod: DEFAULT_PERIOD,
   configuration: {
     isConfiguring: false,
     isLoadingServices: false,
     teamcityServices: [],
-    selectedTeamcityService: null
+    selectedTeamcityService: null,
+    refreshPeriod: null
   }
 });
 

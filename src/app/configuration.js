@@ -5,6 +5,7 @@ import Button from '@jetbrains/ring-ui/components/button/button';
 
 import styles from './app.css';
 import ServiceSelect from './service-select';
+import RefreshPeriodContainer from './refresh-period-container';
 
 const Configuration = (
   {
@@ -15,9 +16,10 @@ const Configuration = (
 ) => (
   <div className={styles.widget}>
     <ServiceSelect dashboardApi={dashboardApi}/>
-    <Panel>
+    <Panel className={styles.configurationButtonsPanel}>
       <Button primary={true} onClick={onConfigSave}>{'Save'}</Button>
       <Button onClick={onConfigCancel}>{'Cancel'}</Button>
+      <RefreshPeriodContainer dashboardApi={dashboardApi}/>
     </Panel>
   </div>
 );
