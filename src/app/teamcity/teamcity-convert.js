@@ -78,5 +78,8 @@ export default function convertTeamcityResponse(teamcityService, teamcityInvesti
       }
     }
   });
-  return Object.values(result);
+  return {
+    count: teamcityInvestigationsResponse.count || 0,
+    data: Object.values(result)
+  };
 }

@@ -1,6 +1,7 @@
 import {createAction} from 'redux-act';
 
 import TeamcityService from '../teamcity/teamcity-service';
+import numberToSuperDigits from '../number-to-super-digits';
 
 export const setInitialSettings = createAction('Set initial settings');
 export const openConfiguration = createAction('Open configuration mode');
@@ -16,14 +17,19 @@ export const startedInvestigationsLoading =
 export const finishedInvestigationsLoading =
     createAction('Finished loading list of investigations');
 
+async function setWidgetTitle(dashboardApi, count) {
+  await dashboardApi.setTitle(`TeamCity Investigations ${numberToSuperDigits(count)}`);
+}
+
 export const loadInvestigations = (dashboardApi, teamcityService) => async dispatch => {
   await dispatch(startedInvestigationsLoading());
 
   dashboardApi.setLoadingAnimationEnabled(true);
   const server = new TeamcityService(dashboardApi);
   const investigations = await server.getMyInvestigations(teamcityService);
+  await setWidgetTitle(dashboardApi, investigations.count);
   await dashboardApi.storeCache(investigations);
-  await dispatch(finishedInvestigationsLoading(investigations));
+  await dispatch(finishedInvestigationsLoading(investigations.data));
   dashboardApi.setLoadingAnimationEnabled(false);
 };
 
@@ -53,11 +59,12 @@ export const initWidget = (dashboardApi, registerWidgetApi) => async dispatch =>
     onRefresh: () => dispatch(reloadInvestigations(dashboardApi))
   });
   const teamcityService = await dashboardApi.readConfig();
-  const {result: investigations} = await dashboardApi.readCache();
+  const {result: {data: investigations, count}} = await dashboardApi.readCache();
   await dispatch(setInitialSettings({
     teamcityService,
     investigations
   }));
+  await setWidgetTitle(dashboardApi, count);
   await dispatch(reloadInvestigations(dashboardApi));
 };
 

@@ -29,7 +29,12 @@ function renderInvestigationDetails(title, details) {
 
 const Investigation = ({name, url, tests, problems}) => (
   <li className={styles.item}>
-    <Link target="_top" href={url}>{name}</Link>
+    <Link
+      target="_top"
+      className={styles.hiddenOverflow}
+      title={name}
+      href={url}
+    >{name}</Link>
 
     {renderInvestigationDetails('Tests failed:', tests)}
     {renderInvestigationDetails('Build problems:', problems)}
