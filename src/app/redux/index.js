@@ -12,7 +12,9 @@ import {
   setInitialSettings,
   startedInvestigationsLoading,
   finishedInvestigationsLoading,
-  updateRefreshPeriod
+  updateRefreshPeriod,
+  setRefreshHandler,
+  clearRefreshHandler
 } from './actions';
 
 // eslint-disable-next-line no-magic-numbers
@@ -79,11 +81,20 @@ const reduce = createReducer({
   [finishedInvestigationsLoading]: (state, investigations) => ({
     ...state,
     investigations
+  }),
+  [setRefreshHandler]: (state, refreshHandler) => ({
+    ...state,
+    refreshHandler
+  }),
+  [clearRefreshHandler]: state => ({
+    ...state,
+    refreshHandler: null
   })
 }, {
   teamcityService: {},
   investigations: [],
   refreshPeriod: DEFAULT_PERIOD,
+  refreshHandler: null,
   configuration: {
     isConfiguring: false,
     isLoadingServices: false,

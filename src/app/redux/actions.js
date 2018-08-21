@@ -17,28 +17,41 @@ export const startedInvestigationsLoading =
   createAction('Started loading list of investigations');
 export const finishedInvestigationsLoading =
   createAction('Finished loading list of investigations');
+export const setRefreshHandler = createAction('Set refresh handler');
+export const clearRefreshHandler = createAction('Clear refresh handler');
 
 async function setWidgetTitle(dashboardApi, count) {
   await dashboardApi.setTitle(`TeamCity Investigations ${numberToSuperDigits(count)}`);
 }
 
-export const loadInvestigations = (dashboardApi, teamcityService) => async dispatch => {
-  await dispatch(startedInvestigationsLoading());
-
-  dashboardApi.setLoadingAnimationEnabled(true);
-  const server = new TeamcityService(dashboardApi);
-  const investigations = await server.getMyInvestigations(teamcityService);
-  await setWidgetTitle(dashboardApi, investigations.count);
-  await dashboardApi.storeCache(investigations);
-  await dispatch(finishedInvestigationsLoading(investigations.data));
-  dashboardApi.setLoadingAnimationEnabled(false);
-};
-
 export const reloadInvestigations = dashboardApi => async (dispatch, getState) => {
   const {teamcityService} = getState();
   if (teamcityService) {
-    await dispatch(loadInvestigations(dashboardApi, teamcityService));
+    await dispatch(startedInvestigationsLoading());
+
+    dashboardApi.setLoadingAnimationEnabled(true);
+    const server = new TeamcityService(dashboardApi);
+    const investigations = await server.getMyInvestigations(teamcityService);
+    await setWidgetTitle(dashboardApi, investigations.count);
+    await dashboardApi.storeCache(investigations);
+    await dispatch(finishedInvestigationsLoading(investigations.data));
+    dashboardApi.setLoadingAnimationEnabled(false);
   }
+};
+
+export const setupRefresh = dashboardApi => async (dispatch, getState) => {
+  const {refreshPeriod, refreshHandler} = getState();
+  if (refreshHandler) {
+    clearTimeout(refreshHandler);
+  }
+
+  const task = async () => {
+    await dispatch(clearRefreshHandler());
+    await dispatch(reloadInvestigations(dashboardApi));
+    const newRefreshHandler = setTimeout(task, refreshPeriod * 1000);
+    await dispatch(setRefreshHandler(newRefreshHandler));
+  };
+  await task();
 };
 
 export const saveConfiguration = dashboardApi => async (dispatch, getState) => {
@@ -49,7 +62,7 @@ export const saveConfiguration = dashboardApi => async (dispatch, getState) => {
   });
   await dispatch(applyConfiguration());
   await dispatch(closeConfiguration());
-  await dispatch(loadInvestigations(dashboardApi, selectedTeamcityService));
+  await dispatch(setupRefresh(dashboardApi));
 };
 
 export const cancelConfiguration = dashboardApi => async dispatch => {
@@ -70,7 +83,7 @@ export const initWidget = (dashboardApi, registerWidgetApi) => async dispatch =>
     investigations
   }));
   await setWidgetTitle(dashboardApi, count);
-  await dispatch(reloadInvestigations(dashboardApi));
+  await dispatch(setupRefresh(dashboardApi));
 };
 
 export const loadTeamCityServices = dashboardApi => async dispatch => {
