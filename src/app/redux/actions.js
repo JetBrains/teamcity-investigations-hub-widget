@@ -24,6 +24,13 @@ export const loadInvestigations = (dashboardApi, teamcityService) => async dispa
   await dispatch(finishedInvestigationsLoading(investigations));
 };
 
+export const reloadInvestigations = dashboardApi => async (dispatch, getState) => {
+  const {teamcityService} = getState();
+  if (teamcityService) {
+    await dispatch(loadInvestigations(dashboardApi, teamcityService));
+  }
+};
+
 export const saveConfiguration = dashboardApi => async (dispatch, getState) => {
   const {configuration: {selectedTeamcityService}} = getState();
   await dashboardApi.storeConfig(selectedTeamcityService);
@@ -39,11 +46,12 @@ export const cancelConfiguration = dashboardApi => async dispatch => {
 
 export const initWidget = (dashboardApi, registerWidgetApi) => async dispatch => {
   registerWidgetApi({
-    onConfigure: () => dispatch(openConfiguration())
+    onConfigure: () => dispatch(openConfiguration()),
+    onRefresh: () => dispatch(reloadInvestigations(dashboardApi))
   });
   const teamcityService = await dashboardApi.readConfig();
   await dispatch(setInitialSettings(teamcityService));
-  await dispatch(loadInvestigations(dashboardApi, teamcityService));
+  await dispatch(reloadInvestigations(dashboardApi));
 };
 
 export const loadTeamCityServices = dashboardApi => async dispatch => {
