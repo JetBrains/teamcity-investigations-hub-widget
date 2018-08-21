@@ -24,7 +24,7 @@ const reduce = createReducer({
     configuration: {
       ...state.configuration,
       isConfiguring: true,
-      selectTeamcityService: state.teamcityService
+      selectedTeamcityService: state.teamcityService
     }
   }),
   [startedTeamcityServicesLoading]: state => ({
