@@ -16,29 +16,3 @@
   padding: 0;
 }
 
-.widget__empty {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 0;
-  transform: translate(0, -50%);
-}
-
-.widget__empty-smile {
-  font-size: 19px;
-  color: text-color;
-  white-space: nowrap;
-  text-align: center;
-}
-
-.widget__empty-message {
-  margin-top: calc(unit * 3);
-  font-size: 13px;
-  color: text-color;
-  text-align: center;
-}
-
-.widget__empty-link {
-  display: inline-block;
-  margin-top: calc(unit);
-}

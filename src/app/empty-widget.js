@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './app.css';
+import styles from './empty-widget.css';
 
 const EmptyWidget = ({header, children}) => (
-  <div className={styles.widget__empty}>
-    <div className={styles['widget__empty-smile']}>{header}</div>
-    <div className={styles['widget__empty-message']}>{children}</div>
+  <div className={styles.empty}>
+    <div className={styles.smile}>{header}</div>
+    <div className={styles.message}>{children}</div>
   </div>
 );
 
