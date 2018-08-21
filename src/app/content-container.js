@@ -7,7 +7,8 @@ import {openConfiguration} from './redux/actions';
 const ContentContainer = connect(
   state => ({
     teamcityService: state.teamcityService,
-    investigations: state.investigations
+    investigations: state.investigations,
+    isLoadingInvestigations: state.isLoadingInvestigations
   }),
   dispatch => ({
     onConfigure: () => dispatch(openConfiguration())

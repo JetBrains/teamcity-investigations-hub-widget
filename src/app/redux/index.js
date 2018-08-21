@@ -5,11 +5,13 @@ import {createReducer} from 'redux-act';
 import {
   applyConfiguration,
   closeConfiguration,
+  startedTeamcityServicesLoading,
   finishedTeamcityServicesLoading,
   openConfiguration,
   selectTeamcityService,
   setInitialSettings,
-  startedTeamcityServicesLoading
+  startedInvestigationsLoading,
+  finishedInvestigationsLoading
 } from './actions';
 
 const reduce = createReducer({
@@ -57,10 +59,20 @@ const reduce = createReducer({
       ...state.configuration,
       isConfiguring: false
     }
+  }),
+  [startedInvestigationsLoading]: state => ({
+    ...state,
+    isLoadingInvestigations: true
+  }),
+  [finishedInvestigationsLoading]: (state, investigations) => ({
+    ...state,
+    isLoadingInvestigations: false,
+    investigations
   })
 }, {
   teamcityService: null,
   investigations: [],
+  isLoadingInvestigations: false,
   configuration: {
     isConfiguring: false,
     isLoadingServices: false,

@@ -9,6 +9,7 @@
     "TeamCity": ">=2017.2"
   },
   "dependencies": {
-    "Hub": ">=2017.1"
+    "Hub": ">=2017.1",
+    "TeamCity": ">=10.0"
   }
 }
