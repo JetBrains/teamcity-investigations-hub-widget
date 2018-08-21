@@ -20,8 +20,8 @@ export const loadInvestigations = (dashboardApi, teamcityService) => async dispa
   await dispatch(startedInvestigationsLoading());
 
   const server = new TeamcityService(dashboardApi);
-  const investigationsResponse = await server.getMyInvestigations(teamcityService);
-  await dispatch(finishedInvestigationsLoading(investigationsResponse.investigation || []));
+  const investigations = await server.getMyInvestigations(teamcityService);
+  await dispatch(finishedInvestigationsLoading(investigations));
 };
 
 export const saveConfiguration = dashboardApi => async (dispatch, getState) => {

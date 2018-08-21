@@ -11,5 +11,8 @@
   "dependencies": {
     "Hub": ">=2017.1",
     "TeamCity": ">=10.0"
+  },
+  "capabilities": {
+    "topNavigation": true
   }
 }

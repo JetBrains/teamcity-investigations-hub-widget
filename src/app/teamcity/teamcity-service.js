@@ -1,3 +1,5 @@
+import convertTeamcityResponse from './teamcity-convert';
+
 const API_VER = '10.0';
 
 export default class TeamcityService {
@@ -7,7 +9,7 @@ export default class TeamcityService {
   }
 
   async getInvestigations(teamcityService, locator) {
-    return await this.dashboardApi.fetch(
+    const teamcityResponse = await this.dashboardApi.fetch(
       teamcityService.id,
       `app/rest/${API_VER}/investigations`,
       {
@@ -15,6 +17,7 @@ export default class TeamcityService {
           locator: this.recursiveConvertHash(locator)
         }
       });
+    return convertTeamcityResponse(teamcityService, teamcityResponse);
   }
 
   async getMyInvestigations(teamcityService) {
