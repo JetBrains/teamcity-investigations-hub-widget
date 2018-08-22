@@ -1,13 +1,12 @@
 {
-  "key": "team-city-investigations",
-  "name": "TeamCity Investigations",
+  "key": "teamcity-investigations",
+  "name": "Investigations",
   "version": "1.0.0",
   "description": "Hub dashboard widget to show the list of assigned investigations from TeamCity",
   "author": "mazine",
   "applicationName": "TeamCity",
   "products": {
-    "Hub": ">=2018.1",
-    "TeamCity": ">=2017.2"
+    "Hub": ">=2018.1"
   },
   "dependencies": {
     "Hub": ">=2017.1",
