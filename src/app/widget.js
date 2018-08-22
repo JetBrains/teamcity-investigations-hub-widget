@@ -11,7 +11,7 @@ const Widget = ({dashboardApi, isConfiguring}) => {
     );
   } else {
     return (
-      <ContentContainer/>
+      <ContentContainer dashboardApi={dashboardApi}/>
     );
   }
 };

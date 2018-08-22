@@ -54,6 +54,11 @@ export const setupRefresh = dashboardApi => async (dispatch, getState) => {
   await task();
 };
 
+export const startConfiguration = dashboardApi => async dispatch => {
+  await dashboardApi.enterConfigMode();
+  await dispatch(openConfiguration());
+};
+
 export const saveConfiguration = dashboardApi => async (dispatch, getState) => {
   const {configuration: {selectedTeamcityService, refreshPeriod}} = getState();
   await dashboardApi.storeConfig({
@@ -75,7 +80,8 @@ export const initWidget = (dashboardApi, registerWidgetApi) => async dispatch =>
     onConfigure: () => dispatch(openConfiguration()),
     onRefresh: () => dispatch(reloadInvestigations(dashboardApi))
   });
-  const {teamcityService, refreshPeriod} = (await dashboardApi.readConfig()) || {};
+  const config = await dashboardApi.readConfig();
+  const {teamcityService, refreshPeriod} = config || {};
   const {result: {data: investigations, count}} = (await dashboardApi.readCache()) || {result: {}};
   await dispatch(setInitialSettings({
     teamcityService,
@@ -84,6 +90,9 @@ export const initWidget = (dashboardApi, registerWidgetApi) => async dispatch =>
   }));
   await setWidgetTitle(dashboardApi, count);
   await dispatch(setupRefresh(dashboardApi));
+  if (!config) {
+    await dispatch(startConfiguration(dashboardApi));
+  }
 };
 
 export const loadTeamCityServices = dashboardApi => async dispatch => {
