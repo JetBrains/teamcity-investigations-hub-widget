@@ -5,11 +5,13 @@ import Button from '@jetbrains/ring-ui/components/button/button';
 
 import styles from './app.css';
 import ServiceSelect from './service-select';
-import RefreshPeriodContainer from './refresh-period-container';
+import RefreshPeriod from './refresh-period';
 
 const Configuration = (
   {
     dashboardApi,
+    refreshPeriod,
+    onRefreshPeriodUpdate,
     onConfigSave,
     onConfigCancel
   }
@@ -19,13 +21,15 @@ const Configuration = (
     <Panel className={styles.configurationButtonsPanel}>
       <Button primary={true} onClick={onConfigSave}>{'Save'}</Button>
       <Button onClick={onConfigCancel}>{'Cancel'}</Button>
-      <RefreshPeriodContainer dashboardApi={dashboardApi}/>
+      <RefreshPeriod seconds={refreshPeriod} onChange={onRefreshPeriodUpdate}/>
     </Panel>
   </div>
 );
 
 Configuration.propTypes = {
   dashboardApi: PropTypes.object.isRequired,
+  refreshPeriod: PropTypes.number.isRequired,
+  onRefreshPeriodUpdate: PropTypes.func.isRequired,
   onConfigSave: PropTypes.func.isRequired,
   onConfigCancel: PropTypes.func.isRequired
 };
