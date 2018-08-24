@@ -48,15 +48,32 @@ export const setupRefresh = dashboardApi => async (dispatch, getState) => {
   const task = async () => {
     await dispatch(clearRefreshHandler());
     await dispatch(reloadInvestigations(dashboardApi));
+    // eslint-disable-next-line no-magic-numbers
     const newRefreshHandler = setTimeout(task, refreshPeriod * 1000);
     await dispatch(setRefreshHandler(newRefreshHandler));
   };
   await task();
 };
 
+export const loadTeamCityServices = dashboardApi => async dispatch => {
+  await dispatch(startedTeamcityServicesLoading());
+  const servicesPage = await dashboardApi.fetchHub(
+    'api/rest/services', {
+      query: {
+        query: 'applicationName: TeamCity',
+        fields: 'id,name,homeUrl',
+        $skip: 0,
+        $top: -1
+      }
+    }
+  );
+  await dispatch(finishedTeamcityServicesLoading(servicesPage.services || []));
+};
+
 export const startConfiguration = dashboardApi => async dispatch => {
   await dashboardApi.enterConfigMode();
   await dispatch(openConfiguration());
+  await dispatch(loadTeamCityServices(dashboardApi));
 };
 
 export const saveConfiguration = dashboardApi => async (dispatch, getState) => {
@@ -93,19 +110,4 @@ export const initWidget = (dashboardApi, registerWidgetApi) => async dispatch =>
   if (!config) {
     await dispatch(startConfiguration(dashboardApi));
   }
-};
-
-export const loadTeamCityServices = dashboardApi => async dispatch => {
-  await dispatch(startedTeamcityServicesLoading());
-  const servicesPage = await dashboardApi.fetchHub(
-    'api/rest/services', {
-      query: {
-        query: 'applicationName: TeamCity',
-        fields: 'id,name,homeUrl',
-        $skip: 0,
-        $top: -1
-      }
-    }
-  );
-  await dispatch(finishedTeamcityServicesLoading(servicesPage.services || []));
 };

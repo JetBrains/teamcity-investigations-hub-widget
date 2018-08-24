@@ -6,8 +6,7 @@ import {cancelConfiguration, saveConfiguration, updateRefreshPeriod} from './red
 import Configuration from './configuration';
 
 const ConfigurationContainer = connect(
-  (state, {dashboardApi}) => ({
-    dashboardApi,
+  state => ({
     refreshPeriod: state.configuration.refreshPeriod
   }),
   (dispatch, {dashboardApi}) => ({

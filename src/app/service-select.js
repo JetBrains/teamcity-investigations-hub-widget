@@ -1,10 +1,9 @@
-import PropTypes from 'prop-types';
 import Select from '@jetbrains/ring-ui/components/select/select';
 import {MinWidth} from '@jetbrains/ring-ui/components/popup/position';
 
 import {connect} from 'react-redux';
 
-import {loadTeamCityServices, selectTeamcityService} from './redux/actions';
+import {selectTeamcityService} from './redux/actions';
 
 const service2item = service => service && {
   key: service.id,
@@ -24,14 +23,11 @@ const ServiceSelect = connect(
     minWidth: MinWidth.TARGET,
     data: state.configuration.teamcityServices.map(service2item)
   }),
-  (dispatch, {dashboardApi}) => ({
-    onOpen: () => dispatch(loadTeamCityServices(dashboardApi)),
+  (dispatch) => ({
     onSelect: selectedItem => dispatch(selectTeamcityService(selectedItem.service))
   })
 )(Select);
 
-ServiceSelect.propTypes = {
-  dashboardApi: PropTypes.object.isRequired
-};
+ServiceSelect.propTypes = {};
 
 export default ServiceSelect;

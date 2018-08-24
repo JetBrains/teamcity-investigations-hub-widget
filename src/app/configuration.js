@@ -9,7 +9,6 @@ import RefreshPeriod from './refresh-period';
 
 const Configuration = (
   {
-    dashboardApi,
     refreshPeriod,
     onRefreshPeriodUpdate,
     onConfigSave,
@@ -17,7 +16,7 @@ const Configuration = (
   }
 ) => (
   <div className={styles.widget}>
-    <ServiceSelect dashboardApi={dashboardApi}/>
+    <ServiceSelect/>
     <Panel className={styles.configurationButtonsPanel}>
       <Button primary={true} onClick={onConfigSave}>{'Save'}</Button>
       <Button onClick={onConfigCancel}>{'Cancel'}</Button>
@@ -27,7 +26,6 @@ const Configuration = (
 );
 
 Configuration.propTypes = {
-  dashboardApi: PropTypes.object.isRequired,
   refreshPeriod: PropTypes.number.isRequired,
   onRefreshPeriodUpdate: PropTypes.func.isRequired,
   onConfigSave: PropTypes.func.isRequired,
