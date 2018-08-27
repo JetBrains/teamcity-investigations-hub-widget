@@ -34,7 +34,7 @@ const Content = ({teamcityService, investigations, investigationLoadErrorMessage
   } else if (investigationLoadErrorMessage) {
     return (
       <WidgetContent>
-        <EmptyWidget header={'(>_<)'}>
+        <EmptyWidget header={'{{ (>_<) }}'}>
           {'Cannot load investigations'}
           <br/>
           {investigationLoadErrorMessage}
