@@ -15,6 +15,10 @@ export default class TeamcityService {
       {
         query: {
           locator: this.recursiveConvertHash(locator)
+        },
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
         }
       });
     return convertTeamcityResponse(teamcityService, teamcityResponse);
@@ -33,21 +37,19 @@ export default class TeamcityService {
     });
   }
 
-  recursiveConvertHash = input => {
-    return Object.
-      entries(input).
-      map(([key, val]) => {
-        if (!val) {
-          return null;
-        } else if (typeof val === 'object') {
-          return `${key}(${this.recursiveConvertHash(val)})`;
-        } else if (Array.isArray(val)) {
-          return `${key}(${val.map(this.recursiveConvertHash).join(',')})`;
-        } else {
-          return `${key}:${val}`;
-        }
-      }).
-      filter(it => it).
-      join(',');
-  }
+  recursiveConvertHash = input => Object.
+    entries(input).
+    map(([key, val]) => {
+      if (!val) {
+        return null;
+      } else if (typeof val === 'object') {
+        return `${key}(${this.recursiveConvertHash(val)})`;
+      } else if (Array.isArray(val)) {
+        return `${key}(${val.map(this.recursiveConvertHash).join(',')})`;
+      } else {
+        return `${key}:${val}`;
+      }
+    }).
+    filter(it => it).
+    join(',')
 }

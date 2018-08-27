@@ -8,7 +8,8 @@ import {startConfiguration} from './redux/actions';
 const ContentContainer = connect(
   state => ({
     teamcityService: state.teamcityService,
-    investigations: state.investigations
+    investigations: state.investigations,
+    investigationLoadErrorMessage: state.investigationLoadErrorMessage
   }),
   (dispatch, {dashboardApi}) => ({
     onConfigure: () => dispatch(startConfiguration(dashboardApi))

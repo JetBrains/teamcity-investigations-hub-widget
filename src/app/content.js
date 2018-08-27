@@ -21,7 +21,7 @@ WidgetContent.propTypes = {
   children: PropTypes.node
 };
 
-const Content = ({teamcityService, investigations, onConfigure}) => {
+const Content = ({teamcityService, investigations, investigationLoadErrorMessage, onConfigure}) => {
   if (!teamcityService) {
     return (
       <WidgetContent>
@@ -29,6 +29,16 @@ const Content = ({teamcityService, investigations, onConfigure}) => {
           {'TeamCity service to get investigations from, it not configuration yet. Please, '}
           <Link onClick={onConfigure}>{'select the service.'}</Link>
         </span>
+      </WidgetContent>
+    );
+  } else if (investigationLoadErrorMessage) {
+    return (
+      <WidgetContent>
+        <EmptyWidget header={'(>_<)'}>
+          {'Cannot load investigations'}
+          <br/>
+          {investigationLoadErrorMessage}
+        </EmptyWidget>
       </WidgetContent>
     );
   } else if (!investigations.length) {
@@ -63,6 +73,7 @@ const Content = ({teamcityService, investigations, onConfigure}) => {
 Content.propTypes = {
   teamcityService: PropTypes.object,
   investigations: PropTypes.array.isRequired,
+  investigationLoadErrorMessage: PropTypes.string,
   onConfigure: PropTypes.func.isRequired
 };
 

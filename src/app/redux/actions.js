@@ -19,6 +19,8 @@ export const startedInvestigationsLoading =
   createAction('Started loading list of investigations');
 export const finishedInvestigationsLoading =
   createAction('Finished loading list of investigations');
+export const failedInvestigationsLoading =
+  createAction('Failed to load list of investigations');
 export const setRefreshHandler = createAction('Set refresh handler');
 export const clearRefreshHandler = createAction('Clear refresh handler');
 
@@ -33,10 +35,15 @@ export const reloadInvestigations = dashboardApi => async (dispatch, getState) =
 
     dashboardApi.setLoadingAnimationEnabled(true);
     const server = new TeamcityService(dashboardApi);
-    const investigations = await server.getMyInvestigations(teamcityService);
-    await setWidgetTitle(dashboardApi, investigations.count);
-    await dashboardApi.storeCache(investigations);
-    await dispatch(finishedInvestigationsLoading(investigations.data));
+    try {
+      const investigations = await server.getMyInvestigations(teamcityService);
+      await setWidgetTitle(dashboardApi, investigations.count);
+      await dashboardApi.storeCache(investigations);
+      await dispatch(finishedInvestigationsLoading(investigations.data));
+    } catch (e) {
+      const error = (e.data && e.data.message) || e.message || e.toString();
+      await dispatch(failedInvestigationsLoading(error));
+    }
     dashboardApi.setLoadingAnimationEnabled(false);
   }
 };
