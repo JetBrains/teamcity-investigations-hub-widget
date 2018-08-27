@@ -28,7 +28,7 @@ async function setWidgetTitle(dashboardApi, count) {
   await dashboardApi.setTitle(`TeamCity Investigations ${numberToSuperDigits(count)}`);
 }
 
-export const reloadInvestigations = dashboardApi => async (dispatch, getState) => {
+export const reloadInvestigations = () => async (dispatch, getState, {dashboardApi}) => {
   const {teamcityService} = getState();
   if (teamcityService) {
     await dispatch(startedInvestigationsLoading());
@@ -48,7 +48,7 @@ export const reloadInvestigations = dashboardApi => async (dispatch, getState) =
   }
 };
 
-export const setupRefresh = dashboardApi => async (dispatch, getState) => {
+export const setupRefresh = () => async (dispatch, getState) => {
   const {refreshPeriod, refreshHandler} = getState();
   if (refreshHandler) {
     clearTimeout(refreshHandler);
@@ -56,7 +56,7 @@ export const setupRefresh = dashboardApi => async (dispatch, getState) => {
 
   const task = async () => {
     await dispatch(clearRefreshHandler());
-    await dispatch(reloadInvestigations(dashboardApi));
+    await dispatch(reloadInvestigations());
     // eslint-disable-next-line no-magic-numbers
     const newRefreshHandler = setTimeout(task, refreshPeriod * 1000);
     await dispatch(setRefreshHandler(newRefreshHandler));
@@ -64,7 +64,7 @@ export const setupRefresh = dashboardApi => async (dispatch, getState) => {
   await task();
 };
 
-export const loadTeamCityServices = dashboardApi => async dispatch => {
+export const loadTeamCityServices = () => async (dispatch, getState, {dashboardApi}) => {
   await dispatch(startedTeamcityServicesLoading());
   try {
     const servicesPage = await dashboardApi.fetchHub(
@@ -85,13 +85,13 @@ export const loadTeamCityServices = dashboardApi => async dispatch => {
   }
 };
 
-export const startConfiguration = dashboardApi => async dispatch => {
+export const startConfiguration = () => async (dispatch, getState, {dashboardApi}) => {
   await dashboardApi.enterConfigMode();
   await dispatch(openConfiguration());
-  await dispatch(loadTeamCityServices(dashboardApi));
+  await dispatch(loadTeamCityServices());
 };
 
-export const saveConfiguration = dashboardApi => async (dispatch, getState) => {
+export const saveConfiguration = () => async (dispatch, getState, {dashboardApi}) => {
   const {configuration: {selectedTeamcityService, refreshPeriod}} = getState();
   await dashboardApi.storeConfig({
     teamcityService: selectedTeamcityService,
@@ -99,18 +99,18 @@ export const saveConfiguration = dashboardApi => async (dispatch, getState) => {
   });
   await dispatch(applyConfiguration());
   await dispatch(closeConfiguration());
-  await dispatch(setupRefresh(dashboardApi));
+  await dispatch(setupRefresh());
 };
 
-export const cancelConfiguration = dashboardApi => async dispatch => {
+export const cancelConfiguration = () => async (dispatch, getState, {dashboardApi}) => {
   await dashboardApi.exitConfigMode();
   await dispatch(closeConfiguration());
 };
 
-export const initWidget = (dashboardApi, registerWidgetApi) => async dispatch => {
+export const initWidget = () => async (dispatch, getState, {dashboardApi, registerWidgetApi}) => {
   registerWidgetApi({
     onConfigure: () => dispatch(openConfiguration()),
-    onRefresh: () => dispatch(reloadInvestigations(dashboardApi))
+    onRefresh: () => dispatch(reloadInvestigations())
   });
   const config = await dashboardApi.readConfig();
   const {teamcityService, refreshPeriod} = config || {};
@@ -121,8 +121,8 @@ export const initWidget = (dashboardApi, registerWidgetApi) => async dispatch =>
     investigations
   }));
   await setWidgetTitle(dashboardApi, count);
-  await dispatch(setupRefresh(dashboardApi));
+  await dispatch(setupRefresh());
   if (!config) {
-    await dispatch(startConfiguration(dashboardApi));
+    await dispatch(startConfiguration());
   }
 };

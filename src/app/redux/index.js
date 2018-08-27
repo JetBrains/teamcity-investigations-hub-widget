@@ -4,19 +4,19 @@ import {createReducer} from 'redux-act';
 
 import {
   applyConfiguration,
+  clearRefreshHandler,
   closeConfiguration,
-  startedTeamcityServicesLoading,
+  failedInvestigationsLoading,
+  failedTeamcityServicesLoading,
+  finishedInvestigationsLoading,
   finishedTeamcityServicesLoading,
   openConfiguration,
   selectTeamcityService,
   setInitialSettings,
-  startedInvestigationsLoading,
-  finishedInvestigationsLoading,
-  updateRefreshPeriod,
   setRefreshHandler,
-  clearRefreshHandler,
-  failedTeamcityServicesLoading,
-  failedInvestigationsLoading
+  startedInvestigationsLoading,
+  startedTeamcityServicesLoading,
+  updateRefreshPeriod
 } from './actions';
 
 // eslint-disable-next-line no-magic-numbers
@@ -125,7 +125,9 @@ const reduce = createReducer({
   }
 });
 
-export default () => {
+export default (dashboardApi, registerWidgetApi) => {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-  return createStore(reduce, composeEnhancers(applyMiddleware(thunkMiddleware)));
+  return createStore(reduce, composeEnhancers(applyMiddleware(
+    thunkMiddleware.withExtraArgument({dashboardApi, registerWidgetApi})
+  )));
 };

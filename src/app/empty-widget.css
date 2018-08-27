@@ -1,29 +1,36 @@
 @value unit, text-color from "@jetbrains/ring-ui/components/global/global.css";
 
-
 .empty {
   position: absolute;
-  width: 100%;
   top: 50%;
   left: 0;
+
+  width: 100%;
+
   transform: translate(0, -50%);
 }
 
 .smile {
-  font-size: 19px;
-  color: text-color;
-  white-space: nowrap;
   text-align: center;
+  white-space: nowrap;
+
+  color: text-color;
+
+  font-size: 19px;
 }
 
 .message {
   margin-top: calc(unit * 3);
-  font-size: 13px;
-  color: text-color;
+
   text-align: center;
+
+  color: text-color;
+
+  font-size: 13px;
 }
 
 .link {
   display: inline-block;
+
   margin-top: calc(unit);
 }

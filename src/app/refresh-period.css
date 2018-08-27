@@ -1,15 +1,19 @@
 @value dark-gray-color, font-size-smaller, unit, link-hover-color from "@jetbrains/ring-ui/components/global/global.css";
 
 .refreshPeriod {
-  color: dark-gray-color;
-  cursor: default;
-  font-size: font-size-smaller;
-  line-height: 10px;
-  white-space: nowrap;
-  user-select: none;
   float: right;
+
   margin-top: unit;
   margin-right: calc(unit / 2);
+
+  cursor: default;
+  user-select: none;
+  white-space: nowrap;
+
+  color: dark-gray-color;
+
+  font-size: font-size-smaller;
+  line-height: 10px;
 }
 
 .button {

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 import {cancelConfiguration, saveConfiguration, updateRefreshPeriod} from './redux/actions';
@@ -9,16 +8,14 @@ const ConfigurationContainer = connect(
   state => ({
     refreshPeriod: state.configuration.refreshPeriod
   }),
-  (dispatch, {dashboardApi}) => ({
+  dispatch => ({
     onRefreshPeriodUpdate: newSeconds => dispatch(updateRefreshPeriod(newSeconds)),
-    onConfigSave: () => dispatch(saveConfiguration(dashboardApi)),
-    onConfigCancel: () => dispatch(cancelConfiguration(dashboardApi))
+    onConfigSave: () => dispatch(saveConfiguration()),
+    onConfigCancel: () => dispatch(cancelConfiguration())
   })
 )(Configuration);
 
-ConfigurationContainer.propTypes = {
-  dashboardApi: PropTypes.object.isRequired
-};
+ConfigurationContainer.propTypes = {};
 
 
 export default ConfigurationContainer;

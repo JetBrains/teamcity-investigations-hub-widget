@@ -11,12 +11,12 @@ import {initWidget} from './redux/actions';
 import WidgetContainer from './widget-container';
 
 DashboardAddons.registerWidget((dashboardApi, registerWidgetApi) => {
-  const store = createStore();
-  store.dispatch(initWidget(dashboardApi, registerWidgetApi));
+  const store = createStore(dashboardApi, registerWidgetApi);
+  store.dispatch(initWidget());
 
   return render(
     <Provider store={store}>
-      <WidgetContainer dashboardApi={dashboardApi}/>
+      <WidgetContainer/>
     </Provider>,
     document.getElementById('app-container')
   );

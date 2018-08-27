@@ -3,9 +3,11 @@
 .investigations {
   padding: 0;
 
-  line-height: line-height;
-  word-wrap: break-word;
   list-style: none;
+
+  word-wrap: break-word;
+
+  line-height: line-height;
 }
 
 .item {
@@ -14,6 +16,7 @@
 
 .details {
   padding-left: calc(unit * 2);
+
   list-style: none;
 }
 
@@ -28,6 +31,7 @@
 .hiddenOverflow {
   display: block;
   overflow: hidden;
+
   white-space: nowrap;
   text-overflow: ellipsis;
 }

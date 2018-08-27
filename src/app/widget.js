@@ -4,20 +4,19 @@ import PropTypes from 'prop-types';
 import ContentContainer from './content-container';
 import ConfigurationContainer from './configuration-container';
 
-const Widget = ({dashboardApi, isConfiguring}) => {
+const Widget = ({isConfiguring}) => {
   if (isConfiguring) {
     return (
-      <ConfigurationContainer dashboardApi={dashboardApi}/>
+      <ConfigurationContainer/>
     );
   } else {
     return (
-      <ContentContainer dashboardApi={dashboardApi}/>
+      <ContentContainer/>
     );
   }
 };
 
 Widget.propTypes = {
-  dashboardApi: PropTypes.object.isRequired,
   isConfiguring: PropTypes.bool.isRequired
 };
 

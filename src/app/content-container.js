@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 import Content from './content';
@@ -11,13 +10,11 @@ const ContentContainer = connect(
     investigations: state.investigations,
     investigationLoadErrorMessage: state.investigationLoadErrorMessage
   }),
-  (dispatch, {dashboardApi}) => ({
-    onConfigure: () => dispatch(startConfiguration(dashboardApi))
+  dispatch => ({
+    onConfigure: () => dispatch(startConfiguration())
   })
 )(Content);
 
-ContentContainer.propTypes = {
-  dashboardApi: PropTypes.object.isRequired
-};
+ContentContainer.propTypes = {};
 
 export default ContentContainer;
