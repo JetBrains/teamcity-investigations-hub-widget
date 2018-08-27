@@ -14,7 +14,8 @@ import {
   finishedInvestigationsLoading,
   updateRefreshPeriod,
   setRefreshHandler,
-  clearRefreshHandler
+  clearRefreshHandler,
+  failedTeamcityServicesLoading
 } from './actions';
 
 // eslint-disable-next-line no-magic-numbers
@@ -49,7 +50,17 @@ const reduce = createReducer({
       ...state.configuration,
       isLoadingServices: false,
       teamcityServices: services,
+      serviceLoadErrorMessage: null,
       selectedTeamcityService: state.selectedTeamcityService || services[0]
+    }
+  }),
+  [failedTeamcityServicesLoading]: (state, serviceLoadErrorMessage) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      isLoadingServices: false,
+      teamcityServices: [],
+      serviceLoadErrorMessage
     }
   }),
   [selectTeamcityService]: (state, selectedService) => ({
@@ -100,6 +111,7 @@ const reduce = createReducer({
     isConfiguring: false,
     isLoadingServices: false,
     teamcityServices: [],
+    serviceLoadErrorMessage: null,
     selectedTeamcityService: null,
     refreshPeriod: null
   }

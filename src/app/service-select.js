@@ -21,9 +21,10 @@ const ServiceSelect = connect(
     selected: service2item(state.configuration.selectedTeamcityService),
     size: Select.Size.FULL,
     minWidth: MinWidth.TARGET,
-    data: state.configuration.teamcityServices.map(service2item)
+    data: state.configuration.teamcityServices.map(service2item),
+    notFoundMessage: state.configuration.serviceLoadErrorMessage
   }),
-  (dispatch) => ({
+  dispatch => ({
     onSelect: selectedItem => dispatch(selectTeamcityService(selectedItem.service))
   })
 )(Select);

@@ -11,6 +11,8 @@ export const startedTeamcityServicesLoading =
   createAction('Started loading list of TeamCity services');
 export const finishedTeamcityServicesLoading =
   createAction('Finished loading list of TeamCity services');
+export const failedTeamcityServicesLoading =
+  createAction('Failed to load list of TeamCity services');
 export const applyConfiguration = createAction('Apply configuration');
 export const closeConfiguration = createAction('Close configuration mode');
 export const startedInvestigationsLoading =
@@ -57,17 +59,23 @@ export const setupRefresh = dashboardApi => async (dispatch, getState) => {
 
 export const loadTeamCityServices = dashboardApi => async dispatch => {
   await dispatch(startedTeamcityServicesLoading());
-  const servicesPage = await dashboardApi.fetchHub(
-    'api/rest/services', {
-      query: {
-        query: 'applicationName: TeamCity',
-        fields: 'id,name,homeUrl',
-        $skip: 0,
-        $top: -1
+  try {
+    const servicesPage = await dashboardApi.fetchHub(
+      'api/rest/services', {
+        query: {
+          query: 'applicationName: TeamCity',
+          fields: 'id,name,homeUrl',
+          $skip: 0,
+          $top: -1
+        }
       }
-    }
-  );
-  await dispatch(finishedTeamcityServicesLoading(servicesPage.services || []));
+    );
+    await dispatch(finishedTeamcityServicesLoading(servicesPage.services || []));
+  } catch (e) {
+    const error = (e.data && e.data.message) || e.message || e.toString();
+    const message = `Cannot load list of TeamCity services: ${error}`;
+    await dispatch(failedTeamcityServicesLoading(message));
+  }
 };
 
 export const startConfiguration = dashboardApi => async dispatch => {
