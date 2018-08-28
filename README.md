@@ -1,7 +1,7 @@
 # TeamCity Investigations Widget
 [![Build Status][ci-img]][ci-bt] [![JetBrains team project](http://jb.gg/badges/team.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 
-This widget displays a list of TeamCity investigations that are assigned to you (the user who is currently logged into Hub or YouTrack). This widget can be added to dashboards and project overview pages in a Hub installation. You can also add this widget to dashboards in YouTrack.
+This widget displays a list of TeamCity investigations that are assigned to you (the user who is currently logged into Hub). This widget can be added to dashboards and project overview pages in a Hub installation.
 
 ## Getting Started
 This project is open source. You are welcome to contribute to the development of this widget or use the source code as a springboard to develop your own widgets.
@@ -25,7 +25,7 @@ You can test widget updates directly in the user interface for Hub. Follow the i
 All major browsers block insecure scripts. You may encounter a problem when you host your widget on a local development server and try to load it into an application over HTTPS. 
 In Chrome, you can add a security exception: click the security notification in the address bar (the one that says "The page is trying to load scripts from unauthenticated sources") and 
 press the "Load unsafe scripts" button. Similar workarounds are available in other browsers as well.
-Additional options for testing widgets over a secure connection are described in the documentation for Hub and YouTrack.
+Additional options for testing widgets over a secure connection are described in the documentation for Hub.
 
 ## JetBrains Ring UI Widget Generator
 
