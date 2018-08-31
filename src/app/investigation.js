@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Link from '@jetbrains/ring-ui/components/link/link';
+import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import styles from './investigation.css';
 
@@ -36,8 +37,8 @@ const Investigation = ({name, url, tests, problems}) => (
       href={url}
     >{name}</Link>
 
-    {renderInvestigationDetails('Tests failed:', tests)}
-    {renderInvestigationDetails('Build problems:', problems)}
+    {renderInvestigationDetails(i18n('Tests failed:'), tests)}
+    {renderInvestigationDetails(i18n('Build problems:'), problems)}
   </li>
 );
 

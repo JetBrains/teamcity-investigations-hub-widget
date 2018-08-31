@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Panel from '@jetbrains/ring-ui/components/panel/panel';
 import Button from '@jetbrains/ring-ui/components/button/button';
+import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import styles from './app.css';
 import ServiceSelect from './service-select';
@@ -18,8 +19,12 @@ const Configuration = (
   <div className={styles.widget}>
     <ServiceSelect/>
     <Panel className={styles.configurationButtonsPanel}>
-      <Button primary={true} onClick={onConfigSave}>{'Save'}</Button>
-      <Button onClick={onConfigCancel}>{'Cancel'}</Button>
+      <Button primary={true} onClick={onConfigSave}>
+        {i18n('Save')}
+      </Button>
+      <Button onClick={onConfigCancel}>
+        {i18n('Cancel')}
+      </Button>
       <RefreshPeriod seconds={refreshPeriod} onChange={onRefreshPeriodUpdate}/>
     </Panel>
   </div>

@@ -1,5 +1,6 @@
 import Select from '@jetbrains/ring-ui/components/select/select';
 import {MinWidth} from '@jetbrains/ring-ui/components/popup/position';
+import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import {connect} from 'react-redux';
 
@@ -14,7 +15,7 @@ const service2item = service => service && {
 
 const ServiceSelect = connect(
   state => ({
-    label: 'Select service',
+    label: i18n('Select service'),
     multiple: false,
     loading: state.configuration.isLoadingServices,
     filter: true,

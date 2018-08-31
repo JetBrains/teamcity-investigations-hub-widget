@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Link from '@jetbrains/ring-ui/components/link/link';
+import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import styles from './app.css';
 import EmptyWidget from './empty-widget';
@@ -26,8 +27,8 @@ const Content = ({teamcityService, investigations, investigationLoadErrorMessage
     return (
       <WidgetContent>
         <span>
-          {'TeamCity service to get investigations from, it not configuration yet. Please, '}
-          <Link onClick={onConfigure}>{'select the service.'}</Link>
+          {i18n('TeamCity service to get investigations from, it not configuration yet. Please, ')}
+          <Link onClick={onConfigure}>{i18n('select the service.')}</Link>
         </span>
       </WidgetContent>
     );
@@ -35,7 +36,7 @@ const Content = ({teamcityService, investigations, investigationLoadErrorMessage
     return (
       <WidgetContent>
         <EmptyWidget header={'{{ (>_<) }}'}>
-          {'Cannot load investigations'}
+          {i18n('Cannot load investigations')}
           <br/>
           {investigationLoadErrorMessage}
         </EmptyWidget>
@@ -45,9 +46,9 @@ const Content = ({teamcityService, investigations, investigationLoadErrorMessage
     return (
       <WidgetContent>
         <EmptyWidget header={'(⌒‿⌒)'}>
-          {'No investigations'}
+          {i18n('No investigations {{areAssignedToYou}}', {areAssignedToYou: ''})}
           <br/>
-          {'are assigned to you'}
+          {i18n('{{noInvestigations}} are assigned to you', {noInvestigations: ''})}
         </EmptyWidget>
       </WidgetContent>
     );
