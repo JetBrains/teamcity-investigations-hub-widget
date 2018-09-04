@@ -11,7 +11,7 @@ const ContentContainer = connect(
     investigationLoadErrorMessage: state.investigationLoadErrorMessage
   }),
   dispatch => ({
-    onConfigure: () => dispatch(startConfiguration())
+    onConfigure: () => dispatch(startConfiguration(false))
   })
 )(Content);
 

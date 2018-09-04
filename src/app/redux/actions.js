@@ -85,11 +85,12 @@ export const loadTeamCityServices = () => async (dispatch, getState, {dashboardA
   }
 };
 
-export const startConfiguration = () => async (dispatch, getState, {dashboardApi}) => {
-  await dashboardApi.enterConfigMode();
-  await dispatch(openConfiguration());
-  await dispatch(loadTeamCityServices());
-};
+export const startConfiguration = isInitialConfiguration =>
+  async (dispatch, getState, {dashboardApi}) => {
+    await dashboardApi.enterConfigMode();
+    await dispatch(openConfiguration(isInitialConfiguration));
+    await dispatch(loadTeamCityServices());
+  };
 
 export const saveConfiguration = () => async (dispatch, getState, {dashboardApi}) => {
   const {configuration: {selectedTeamcityService, refreshPeriod}} = getState();
@@ -103,13 +104,17 @@ export const saveConfiguration = () => async (dispatch, getState, {dashboardApi}
 };
 
 export const cancelConfiguration = () => async (dispatch, getState, {dashboardApi}) => {
+  const {configuration: {isInitialConfiguration}} = getState();
   await dashboardApi.exitConfigMode();
   await dispatch(closeConfiguration());
+  if (isInitialConfiguration) {
+    await dashboardApi.removeWidget();
+  }
 };
 
 export const initWidget = () => async (dispatch, getState, {dashboardApi, registerWidgetApi}) => {
   registerWidgetApi({
-    onConfigure: () => dispatch(openConfiguration()),
+    onConfigure: () => dispatch(openConfiguration(false)),
     onRefresh: () => dispatch(reloadInvestigations())
   });
   const config = await dashboardApi.readConfig();
@@ -123,6 +128,6 @@ export const initWidget = () => async (dispatch, getState, {dashboardApi, regist
   await setWidgetTitle(dashboardApi, count);
   await dispatch(setupRefresh());
   if (!config) {
-    await dispatch(startConfiguration());
+    await dispatch(startConfiguration(true));
   }
 };

@@ -29,13 +29,14 @@ const reduce = createReducer({
     refreshPeriod: refreshPeriod || DEFAULT_PERIOD,
     investigations: investigations || []
   }),
-  [openConfiguration]: state => ({
+  [openConfiguration]: (state, isInitialConfiguration) => ({
     ...state,
     configuration: {
       ...state.configuration,
       isConfiguring: true,
       selectedTeamcityService: state.teamcityService,
-      refreshPeriod: state.refreshPeriod
+      refreshPeriod: state.refreshPeriod,
+      isInitialConfiguration
     }
   }),
   [startedTeamcityServicesLoading]: state => ({
@@ -121,7 +122,8 @@ const reduce = createReducer({
     teamcityServices: [],
     serviceLoadErrorMessage: null,
     selectedTeamcityService: null,
-    refreshPeriod: null
+    refreshPeriod: null,
+    isInitialConfiguration: false
   }
 });
 
