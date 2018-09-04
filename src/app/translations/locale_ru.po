@@ -7,81 +7,45 @@ msgstr ""
 "X-Generator: crowdin.com\n"
 "X-Crowdin-Project: youtrack-widgets\n"
 "X-Crowdin-Language: ru\n"
-"X-Crowdin-File: teamcity-investigations-hub-widget.pot\n"
+"X-Crowdin-File: hub-project-team-widget.pot\n"
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-08-31 18:57\n"
+"PO-Revision-Date: 2018-09-02 18:35\n"
 
-#: src/app/investigation.js:41
-msgid "Build problems:"
-msgstr ""
-
-#: src/app/configuration.js:26
+#: src/app/app.js:172
 msgid "Cancel"
-msgstr ""
-
-#: src/app/content.js:39
-msgid "Cannot load investigations"
-msgstr ""
+msgstr "Закрыть"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
-msgstr ""
+msgstr "Январь|Февраль|Март|Апрель|Май|Июнь|Июль|Август|Сентябрь|Октябрь|Ноябрь|Декабрь"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
-msgstr ""
+msgstr "Янв|Фев|Мар|Апр|Май|Июн|Июл|Авг|Сеп|Окт|Ноя|Дек"
 
-#: src/app/content.js:49
-msgid "No investigations {{areAssignedToYou}}"
-msgstr ""
-
-#: src/app/configuration.js:23
+#: src/app/app.js:170
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
-#: src/app/service-select.js:18
-msgid "Select service"
-msgstr ""
+#: src/app/app.js:161
+msgid "Select a project"
+msgstr "Выберите проект"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
-msgstr ""
+msgstr "Воскресенье|Понедельник|Вторник|Среда|Четверг|Пятница|Суббота"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
-msgstr ""
-
-#: src/app/content.js:30
-msgid "TeamCity service to get investigations from, it not configuration yet. Please,"
-msgstr ""
-
-#: src/app/investigation.js:40
-msgid "Tests failed:"
-msgstr "Упавшие тесты:"
-
-#: src/app/refresh-period.js:34
-msgid "Widget refreshes every minute"
-msgstr ""
-
-#: src/app/refresh-period.js:35
-msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr ""
+msgstr "Вс|Пн|Вт|Ср|Чт|Пт|Сб"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
-msgstr ""
+msgstr "ДП|ПП"
 
-#: src/app/content.js:31
-msgid "select the service."
-msgstr "выберите сервис."
-
-#: src/app/refresh-period.js:40
-msgid "{{minutesCount}} min"
-msgstr ""
-
-#: src/app/content.js:51
-msgid "{{noInvestigations}} are assigned to you"
-msgstr ""
+#: src/app/app.js:203
+msgid "project owner"
+msgstr "владелец проекта"
 
