@@ -53,7 +53,7 @@ const reduce = createReducer({
       isLoadingServices: false,
       teamcityServices: services,
       serviceLoadErrorMessage: null,
-      selectedTeamcityService: state.selectedTeamcityService || services[0]
+      selectedTeamcityService: state.configuration.selectedTeamcityService || services[0]
     }
   }),
   [failedTeamcityServicesLoading]: (state, serviceLoadErrorMessage) => ({

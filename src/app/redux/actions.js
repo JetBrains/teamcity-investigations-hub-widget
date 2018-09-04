@@ -114,7 +114,7 @@ export const cancelConfiguration = () => async (dispatch, getState, {dashboardAp
 
 export const initWidget = () => async (dispatch, getState, {dashboardApi, registerWidgetApi}) => {
   registerWidgetApi({
-    onConfigure: () => dispatch(openConfiguration(false)),
+    onConfigure: () => dispatch(startConfiguration(false)),
     onRefresh: () => dispatch(reloadInvestigations())
   });
   const config = await dashboardApi.readConfig();
