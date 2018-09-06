@@ -6,7 +6,6 @@ import {Provider} from 'react-redux';
 import {render} from 'react-dom';
 
 import 'file-loader?name=[name].[ext]!../../manifest.json'; // eslint-disable-line import/no-unresolved
-
 import createStore from './redux/index';
 import {initWidget} from './redux/actions';
 import WidgetContainer from './widget-container';
@@ -20,7 +19,7 @@ DashboardAddons.registerWidget((dashboardApi, registerWidgetApi) => {
 
   return render(
     <Provider store={store}>
-      <WidgetContainer/>
+      <WidgetContainer dashboardApi={dashboardApi}/>
     </Provider>,
     document.getElementById('app-container')
   );

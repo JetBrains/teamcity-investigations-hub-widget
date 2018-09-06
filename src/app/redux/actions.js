@@ -24,13 +24,6 @@ export const failedInvestigationsLoading =
 export const setRefreshHandler = createAction('Set refresh handler');
 export const clearRefreshHandler = createAction('Clear refresh handler');
 
-async function setWidgetTitle(dashboardApi, teamcityService, count) {
-  await dashboardApi.setTitle(
-    `TeamCity Investigations ${count >= 0 ? toSuperDigitsString(count) : ''}`,
-    teamcityService && teamcityService.homeUrl && `${teamcityService.homeUrl}/investigations.html`
-  );
-}
-
 export const reloadInvestigations = () => async (dispatch, getState, {dashboardApi}) => {
   const {teamcityService} = getState();
   if (teamcityService) {
@@ -40,13 +33,14 @@ export const reloadInvestigations = () => async (dispatch, getState, {dashboardA
     const server = new TeamcityService(dashboardApi);
     try {
       const investigations = await server.getMyInvestigations(teamcityService);
-      await setWidgetTitle(dashboardApi, teamcityService, investigations.count);
       await dashboardApi.storeCache(investigations);
-      await dispatch(finishedInvestigationsLoading(investigations.data));
+      await dispatch(finishedInvestigationsLoading({
+        investigations: investigations.data,
+        investigationsCount: investigations.count
+      }));
     } catch (e) {
       const error = (e.data && e.data.message) || e.message || e.toString();
       await dispatch(failedInvestigationsLoading(error));
-      await setWidgetTitle(dashboardApi, teamcityService, -1);
     }
     dashboardApi.setLoadingAnimationEnabled(false);
   }
@@ -127,9 +121,9 @@ export const initWidget = () => async (dispatch, getState, {dashboardApi, regist
   await dispatch(setInitialSettings({
     teamcityService,
     refreshPeriod,
-    investigations
+    investigations,
+    investigationsCount: count
   }));
-  await setWidgetTitle(dashboardApi, teamcityService, count);
   await dispatch(setupRefresh());
   if (!config) {
     await dispatch(startConfiguration(true));

@@ -23,11 +23,12 @@ import {
 const DEFAULT_PERIOD = 300;
 
 const reduce = createReducer({
-  [setInitialSettings]: (state, {teamcityService, refreshPeriod, investigations}) => ({
+  [setInitialSettings]: (state, {teamcityService, refreshPeriod, investigations, investigationsCount}) => ({
     ...state,
     teamcityService,
     refreshPeriod: refreshPeriod || DEFAULT_PERIOD,
-    investigations: investigations || []
+    investigations: investigations || [],
+    investigationsCount
   }),
   [openConfiguration]: (state, isInitialConfiguration) => ({
     ...state,
@@ -92,14 +93,16 @@ const reduce = createReducer({
     }
   }),
   [startedInvestigationsLoading]: state => state,
-  [finishedInvestigationsLoading]: (state, investigations) => ({
+  [finishedInvestigationsLoading]: (state, {investigations, investigationsCount}) => ({
     ...state,
     investigations,
+    investigationsCount,
     investigationLoadErrorMessage: null
   }),
   [failedInvestigationsLoading]: (state, investigationLoadErrorMessage) => ({
     ...state,
     investigations: [],
+    investigationsCount: -1,
     investigationLoadErrorMessage
   }),
   [setRefreshHandler]: (state, refreshHandler) => ({
@@ -114,6 +117,7 @@ const reduce = createReducer({
   teamcityService: {},
   investigations: [],
   investigationLoadErrorMessage: null,
+  investigationsCount: -1,
   refreshPeriod: DEFAULT_PERIOD,
   refreshHandler: null,
   configuration: {
