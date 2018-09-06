@@ -1,7 +1,7 @@
 import {createAction} from 'redux-act';
 
 import TeamcityService from '../teamcity/teamcity-service';
-import toSuperDigitsString from '../hub-widget-ui/dist/super-digits/super-digits';
+import toSuperDigitsString from '../lib/super-digits/super-digits';
 
 export const setInitialSettings = createAction('Set initial settings');
 export const openConfiguration = createAction('Open configuration mode');

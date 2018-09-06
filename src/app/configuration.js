@@ -6,7 +6,7 @@ import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import styles from './app.css';
 import ServiceSelect from './service-select';
-import RefreshPeriod from './refresh-period';
+import RefreshPeriod from './lib/refresh-period/refresh-period';
 
 const Configuration = (
   {
