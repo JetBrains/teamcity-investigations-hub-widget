@@ -1,7 +1,7 @@
 import {createAction} from 'redux-act';
 
 import TeamcityService from '../teamcity/teamcity-service';
-import numberToSuperDigits from '../number-to-super-digits';
+import toSuperDigitsString from '../hub-widget-ui/dist/super-digits/super-digits';
 
 export const setInitialSettings = createAction('Set initial settings');
 export const openConfiguration = createAction('Open configuration mode');
@@ -26,7 +26,7 @@ export const clearRefreshHandler = createAction('Clear refresh handler');
 
 async function setWidgetTitle(dashboardApi, teamcityService, count) {
   await dashboardApi.setTitle(
-    `TeamCity Investigations ${count >= 0 ? numberToSuperDigits(count) : ''}`,
+    `TeamCity Investigations ${count >= 0 ? toSuperDigitsString(count) : ''}`,
     teamcityService && teamcityService.homeUrl && `${teamcityService.homeUrl}/investigations.html`
   );
 }
