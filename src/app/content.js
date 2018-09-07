@@ -28,8 +28,8 @@ const Content = ({teamcityService, investigations, investigationLoadErrorMessage
     return (
       <WidgetContent>
         <span>
-          {i18n('TeamCity service to get investigations from, it not configuration yet. Please, ')}
-          <Link onClick={onConfigure}>{i18n('select the service.')}</Link>
+          {i18n('TeamCity service is not configured yet.')}
+          <Link onClick={onConfigure}>{i18n('Set up...')}</Link>
         </span>
       </WidgetContent>
     );
@@ -47,9 +47,7 @@ const Content = ({teamcityService, investigations, investigationLoadErrorMessage
     return (
       <WidgetContent>
         <EmptyWidget header={JOY_FACE}>
-          {i18n('No investigations {{areAssignedToYou}}', {areAssignedToYou: ''})}
-          <br/>
-          {i18n('{{noInvestigations}} are assigned to you', {noInvestigations: ''})}
+          <div dangerouslySetInnerHTML={{__html: i18n('No investigations<br>are assigned to you')}}/>
         </EmptyWidget>
       </WidgetContent>
     );
