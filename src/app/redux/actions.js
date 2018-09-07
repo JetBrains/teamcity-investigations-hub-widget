@@ -1,7 +1,6 @@
 import {createAction} from 'redux-act';
 
 import TeamcityService from '../teamcity/teamcity-service';
-import toSuperDigitsString from '../lib/super-digits/super-digits';
 
 export const setInitialSettings = createAction('Set initial settings');
 export const openConfiguration = createAction('Open configuration mode');
@@ -21,8 +20,6 @@ export const finishedInvestigationsLoading =
   createAction('Finished loading list of investigations');
 export const failedInvestigationsLoading =
   createAction('Failed to load list of investigations');
-export const setRefreshHandler = createAction('Set refresh handler');
-export const clearRefreshHandler = createAction('Clear refresh handler');
 
 export const reloadInvestigations = () => async (dispatch, getState, {dashboardApi}) => {
   const {teamcityService} = getState();
@@ -44,22 +41,6 @@ export const reloadInvestigations = () => async (dispatch, getState, {dashboardA
     }
     dashboardApi.setLoadingAnimationEnabled(false);
   }
-};
-
-export const setupRefresh = () => async (dispatch, getState) => {
-  const {refreshPeriod, refreshHandler} = getState();
-  if (refreshHandler) {
-    clearTimeout(refreshHandler);
-  }
-
-  const task = async () => {
-    await dispatch(clearRefreshHandler());
-    await dispatch(reloadInvestigations());
-    // eslint-disable-next-line no-magic-numbers
-    const newRefreshHandler = setTimeout(task, refreshPeriod * 1000);
-    await dispatch(setRefreshHandler(newRefreshHandler));
-  };
-  await task();
 };
 
 export const loadTeamCityServices = () => async (dispatch, getState, {dashboardApi}) => {
@@ -98,7 +79,7 @@ export const saveConfiguration = () => async (dispatch, getState, {dashboardApi}
   });
   await dispatch(applyConfiguration());
   await dispatch(closeConfiguration());
-  await dispatch(setupRefresh());
+  await dispatch(reloadInvestigations());
 };
 
 export const cancelConfiguration = () => async (dispatch, getState, {dashboardApi}) => {
@@ -124,7 +105,7 @@ export const initWidget = () => async (dispatch, getState, {dashboardApi, regist
     investigations,
     investigationsCount: count
   }));
-  await dispatch(setupRefresh());
+  await dispatch(reloadInvestigations());
   if (!config) {
     await dispatch(startConfiguration(true));
   }

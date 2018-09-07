@@ -4,7 +4,6 @@ import {createReducer} from 'redux-act';
 
 import {
   applyConfiguration,
-  clearRefreshHandler,
   closeConfiguration,
   failedInvestigationsLoading,
   failedTeamcityServicesLoading,
@@ -13,7 +12,6 @@ import {
   openConfiguration,
   selectTeamcityService,
   setInitialSettings,
-  setRefreshHandler,
   startedInvestigationsLoading,
   startedTeamcityServicesLoading,
   updateRefreshPeriod
@@ -104,14 +102,6 @@ const reduce = createReducer({
     investigations: [],
     investigationsCount: -1,
     investigationLoadErrorMessage
-  }),
-  [setRefreshHandler]: (state, refreshHandler) => ({
-    ...state,
-    refreshHandler
-  }),
-  [clearRefreshHandler]: state => ({
-    ...state,
-    refreshHandler: null
   })
 }, {
   teamcityService: {},
@@ -119,7 +109,6 @@ const reduce = createReducer({
   investigationLoadErrorMessage: null,
   investigationsCount: -1,
   refreshPeriod: DEFAULT_PERIOD,
-  refreshHandler: null,
   configuration: {
     isConfiguring: false,
     isLoadingServices: false,

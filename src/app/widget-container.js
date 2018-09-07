@@ -4,11 +4,14 @@ import {connect} from 'react-redux';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import Widget from './widget';
+import {reloadInvestigations} from './redux/actions';
 
 const WidgetContainer = connect(
   (state, {dashboardApi}) => ({
     dashboardApi,
     isConfiguring: state.configuration.isConfiguring,
+    // eslint-disable-next-line no-magic-numbers
+    refreshPeriod: state.refreshPeriod * 1000,
     title: state.configuration.isConfiguring
       ? {
         title: i18n('TeamCity Investigations'),
@@ -24,8 +27,11 @@ const WidgetContainer = connect(
           `${state.teamcityService.homeUrl}/investigations.html`,
         dashboardApi
       }
-
-  }))(Widget);
+  }),
+  dispatch => ({
+    onRefresh: () => dispatch(reloadInvestigations())
+  })
+)(Widget);
 
 WidgetContainer.propTypes = {
   dashboardApi: PropTypes.object.isRequired
