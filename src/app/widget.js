@@ -3,26 +3,36 @@ import PropTypes from 'prop-types';
 
 import WidgetTitle from './lib/widget-title/widget-title';
 import Timer from './lib/timer/timer';
-
-import ContentContainer from './content-container';
 import ConfigurationContainer from './configuration-container';
+import Content from './content';
 
 const Widget = (
   {
     isConfiguring,
     title,
     refreshPeriod,
+    teamcityService,
+    investigations,
+    investigationLoadErrorMessage,
     onRefresh,
-    dashboardApi
+    onConfigure
   }
 ) => (
   <div>
-    <WidgetTitle {...title} dashboardApi={dashboardApi}/>
-    <Timer onTick={onRefresh} period={refreshPeriod}/>
+    <WidgetTitle {...title}/>
+    <Timer
+      onTick={onRefresh}
+      period={refreshPeriod}
+    />
     {isConfiguring ? (
       <ConfigurationContainer/>
     ) : (
-      <ContentContainer/>
+      <Content
+        teamcityService={teamcityService}
+        investigations={investigations}
+        investigationLoadErrorMessage={investigationLoadErrorMessage}
+        onConfigure={onConfigure}
+      />
     )}
   </div>
 );
@@ -35,8 +45,11 @@ Widget.propTypes = {
     href: PropTypes.string
   }).isRequired,
   refreshPeriod: PropTypes.number.isRequired,
-  onRefresh: PropTypes.func.isRequired,
-  dashboardApi: PropTypes.object.isRequired
+  teamcityService: PropTypes.object,
+  investigations: PropTypes.array.isRequired,
+  investigationLoadErrorMessage: PropTypes.string,
+  onConfigure: PropTypes.func.isRequired,
+  onRefresh: PropTypes.func.isRequired
 };
 
 export default Widget;
