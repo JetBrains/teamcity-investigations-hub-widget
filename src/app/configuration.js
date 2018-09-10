@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import Select from '@jetbrains/ring-ui/components/select/select';
-import {MinWidth} from '@jetbrains/ring-ui/components/popup/position';
 
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import ConfigurationForm from './lib/configuration-form/configuration-form';
+import ServiceSelect from './lib/service-select/service-select';
 
 import {
   cancelConfiguration,
@@ -16,22 +15,17 @@ import {
 } from './redux/actions';
 
 
-const service2item = service => service && {
-  key: service.id,
-  label: service.name,
-  description: service.homeUrl,
-  service
-};
-
 const Configuration = (
   {
     refreshPeriod,
     onRefreshPeriodUpdate,
+
     isLoadingServices,
     selectedService,
     serviceList,
     serviceNotFoundMessage,
     onServiceSelect,
+
     onSave,
     onCancel
   }
@@ -46,17 +40,13 @@ const Configuration = (
     cancelButtonLabel={i18n('Cancel')}
     onCancel={onCancel}
   >
-    <Select
-      label={i18n('Select service')}
-      multiple={false}
-      loading={isLoadingServices}
-      filter={true}
-      selected={service2item(selectedService)}
-      size={Select.Size.FULL}
-      minWidth={MinWidth.TARGET}
-      data={serviceList.map(service2item)}
-      notFoundMessage={serviceNotFoundMessage}
-      onSelect={onServiceSelect}
+    <ServiceSelect
+      isLoading={isLoadingServices}
+      placeholder={i18n('Select service')}
+      selectedService={selectedService}
+      serviceList={serviceList}
+      loadError={serviceNotFoundMessage}
+      onServiceSelect={onServiceSelect}
     />
   </ConfigurationForm>
 );

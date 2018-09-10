@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import WidgetTitle from './lib/widget-title/widget-title';
 import Timer from './lib/timer/timer';
-import ConfigurationContainer from './configuration-container';
+import Configuration from './configuration';
 import Content from './content';
 
 const Widget = (
@@ -25,7 +25,7 @@ const Widget = (
       period={refreshPeriod}
     />
     {isConfiguring ? (
-      <ConfigurationContainer/>
+      <Configuration/>
     ) : (
       <Content
         teamcityService={teamcityService}
