@@ -90,22 +90,28 @@ const reduce = createReducer({
       isConfiguring: false
     }
   }),
-  [startedInvestigationsLoading]: state => state,
+  [startedInvestigationsLoading]: state => ({
+    ...state,
+    isLoadingInvestigations: true
+  }),
   [finishedInvestigationsLoading]: (state, {investigations, investigationsCount}) => ({
     ...state,
     investigations,
     investigationsCount,
+    isLoadingInvestigations: false,
     investigationLoadErrorMessage: null
   }),
   [failedInvestigationsLoading]: (state, investigationLoadErrorMessage) => ({
     ...state,
     investigations: [],
     investigationsCount: -1,
+    isLoadingInvestigations: false,
     investigationLoadErrorMessage
   })
 }, {
   teamcityService: {},
   investigations: [],
+  isLoadingInvestigations: false,
   investigationLoadErrorMessage: null,
   investigationsCount: -1,
   refreshPeriod: DEFAULT_PERIOD,

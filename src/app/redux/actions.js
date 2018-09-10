@@ -26,7 +26,6 @@ export const reloadInvestigations = () => async (dispatch, getState, {dashboardA
   if (teamcityService) {
     await dispatch(startedInvestigationsLoading());
 
-    dashboardApi.setLoadingAnimationEnabled(true);
     const server = new TeamcityService(dashboardApi);
     try {
       const investigations = await server.getMyInvestigations(teamcityService);
@@ -39,7 +38,6 @@ export const reloadInvestigations = () => async (dispatch, getState, {dashboardA
       const error = (e.data && e.data.message) || e.message || e.toString();
       await dispatch(failedInvestigationsLoading(error));
     }
-    dashboardApi.setLoadingAnimationEnabled(false);
   }
 };
 

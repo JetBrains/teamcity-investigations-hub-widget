@@ -75,6 +75,7 @@ ContentContainer.propTypes = {};
 const WidgetContainer = connect(
   (state, {dashboardApi}) => ({
     isConfiguring: state.configuration.isConfiguring,
+    isLoadingInvestigations: state.isLoadingInvestigations,
     // eslint-disable-next-line no-magic-numbers
     refreshPeriod: state.refreshPeriod * 1000,
     dashboardApi,
