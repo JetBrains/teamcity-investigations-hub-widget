@@ -11,7 +11,7 @@ import RefreshPeriod from './lib/refresh-period/refresh-period';
 const refreshLabel = minutes => i18n('{{minutes}} min', {minutes});
 const refreshTooltip = minutes => (minutes === 1
   ? i18n('Widget refreshes every minute')
-  : i18n('Widget refreshes every {{minutes}} minutes', {minutes}));
+  : i18n('Widget refreshes every {{minutes}} minutes', {minutes}, minutes));
 
 const Configuration = (
   {
