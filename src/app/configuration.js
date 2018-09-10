@@ -5,6 +5,12 @@ import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import ConfigurationForm from './lib/configuration-form/configuration-form';
 import ServiceSelect from './lib/service-select/service-select';
+import RefreshPeriod from './lib/refresh-period/refresh-period';
+
+const refreshLabel = minutes => i18n('{{minutes}} min', {minutes});
+const refreshTooltip = minutes => (minutes === 1
+  ? i18n('Widget refreshes every minute')
+  : i18n('Widget refreshes every {{minutes}} minutes', {minutes}));
 
 const Configuration = (
   {
@@ -22,14 +28,21 @@ const Configuration = (
   }
 ) => (
   <ConfigurationForm
-    refreshPeriod={refreshPeriod}
-    onRefreshPeriodUpdate={onRefreshPeriodUpdate}
-
     saveButtonLabel={i18n('Save')}
     onSave={onSave}
 
     cancelButtonLabel={i18n('Cancel')}
     onCancel={onCancel}
+
+    panelControls={[(
+      <RefreshPeriod
+        key="refresh"
+        seconds={refreshPeriod}
+        label={refreshLabel}
+        tooltip={refreshTooltip}
+        onChange={onRefreshPeriodUpdate}
+      />
+    )]}
   >
     <ServiceSelect
       isLoading={isLoadingServices}
