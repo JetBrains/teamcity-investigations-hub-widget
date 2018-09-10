@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import ConfigurationForm from '@jetbrains/hub-widget-ui/dist/configuration-form';
+// import RefreshPeriod from '@jetbrains/hub-widget-ui/dist/refresh-period';
+// import ServiceSelect from '@jetbrains/hub-widget-ui/dist/service-select';
 
-import ServiceSelect from './lib/service-select/service-select';
 import RefreshPeriod from './lib/refresh-period/refresh-period';
+import ServiceSelect from './lib/service-select/service-select';
 
 const refreshLabel = minutes => i18n('{{minutes}} min', {minutes});
 const refreshTooltip = minutes => (minutes === 1
