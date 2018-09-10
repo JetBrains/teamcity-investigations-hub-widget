@@ -65,8 +65,7 @@ export const loadTeamCityServices = () => async (dispatch, getState, {dashboardA
 };
 
 export const startConfiguration = isInitialConfiguration =>
-  async (dispatch, getState, {dashboardApi}) => {
-    await dashboardApi.enterConfigMode();
+  async dispatch => {
     await dispatch(openConfiguration(isInitialConfiguration));
     await dispatch(loadTeamCityServices());
   };
@@ -84,7 +83,6 @@ export const saveConfiguration = () => async (dispatch, getState, {dashboardApi}
 
 export const cancelConfiguration = () => async (dispatch, getState, {dashboardApi}) => {
   const {configuration: {isInitialConfiguration}} = getState();
-  await dashboardApi.exitConfigMode();
   await dispatch(closeConfiguration());
   if (isInitialConfiguration) {
     await dashboardApi.removeWidget();

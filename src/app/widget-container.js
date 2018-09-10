@@ -77,7 +77,8 @@ const WidgetContainer = connect(
     isConfiguring: state.configuration.isConfiguring,
     // eslint-disable-next-line no-magic-numbers
     refreshPeriod: state.refreshPeriod * 1000,
-    Title: (<TitleContainer dashboardApi={dashboardApi}/>),
+    dashboardApi,
+    Title: TitleContainer,
     Configuration: ConfigurationContainer,
     Content: ContentContainer
   }),

@@ -1,19 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
 
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import ConfigurationForm from './lib/configuration-form/configuration-form';
 import ServiceSelect from './lib/service-select/service-select';
-
-import {
-  cancelConfiguration,
-  saveConfiguration,
-  selectTeamcityService,
-  updateRefreshPeriod
-} from './redux/actions';
-
 
 const Configuration = (
   {
@@ -54,11 +45,13 @@ const Configuration = (
 Configuration.propTypes = {
   refreshPeriod: PropTypes.number.isRequired,
   onRefreshPeriodUpdate: PropTypes.func.isRequired,
+
   isLoadingServices: PropTypes.bool.isRequired,
   selectedService: PropTypes.object,
   serviceList: PropTypes.array,
   serviceNotFoundMessage: PropTypes.string,
   onServiceSelect: PropTypes.func.isRequired,
+
   onSave: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired
 };
