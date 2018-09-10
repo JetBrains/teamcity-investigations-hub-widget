@@ -1,10 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
-import WidgetTitle from './lib/widget-title/widget-title';
+import WidgetTitle from '@jetbrains/hub-widget-ui/dist/widget-title';
 
 import Widget from './widget';
 import Configuration from './configuration';

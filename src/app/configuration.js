@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
-import ConfigurationForm from './lib/configuration-form/configuration-form';
+import ConfigurationForm from '@jetbrains/hub-widget-ui/dist/configuration-form';
+
 import ServiceSelect from './lib/service-select/service-select';
 import RefreshPeriod from './lib/refresh-period/refresh-period';
 

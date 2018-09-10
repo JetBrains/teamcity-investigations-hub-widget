@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Timer from './lib/timer/timer';
-import ConfigurableWidget from './lib/configurable-widget/configurable-widget';
-import WidgetLoader from './lib/widget-loader/widget-loader';
+import Timer from '@jetbrains/hub-widget-ui/dist/timer';
+import ConfigurableWidget from '@jetbrains/hub-widget-ui/dist/configurable-widget';
+import WidgetLoader from '@jetbrains/hub-widget-ui/dist/widget-loader';
 
 const Widget = (
   {
