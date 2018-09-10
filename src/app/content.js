@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Link from '@jetbrains/ring-ui/components/link/link';
-import EmptyWidget, {ERROR_FACE, JOY_FACE} from '@jetbrains/hub-widget-ui/dist/empty-widget';
+import EmptyWidget, {EmptyWidgetFaces} from '@jetbrains/hub-widget-ui/dist/empty-widget';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import styles from './app.css';
@@ -35,7 +35,7 @@ const Content = ({teamcityService, investigations, investigationLoadErrorMessage
   } else if (investigationLoadErrorMessage) {
     return (
       <WidgetContent>
-        <EmptyWidget header={ERROR_FACE}>
+        <EmptyWidget face={EmptyWidgetFaces.ERROR}>
           {i18n('Cannot load investigations')}
           <br/>
           {investigationLoadErrorMessage}
@@ -45,7 +45,7 @@ const Content = ({teamcityService, investigations, investigationLoadErrorMessage
   } else if (!investigations.length) {
     return (
       <WidgetContent>
-        <EmptyWidget header={JOY_FACE}>
+        <EmptyWidget face={EmptyWidgetFaces.JOY}>
           <div dangerouslySetInnerHTML={{__html: i18n('No investigations<br>are assigned to you')}}/>
         </EmptyWidget>
       </WidgetContent>
