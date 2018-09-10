@@ -63,23 +63,4 @@ Configuration.propTypes = {
   onCancel: PropTypes.func.isRequired
 };
 
-const ConfigurationContainer = connect(
-  state => ({
-    refreshPeriod: state.configuration.refreshPeriod,
-    isLoadingServices: state.configuration.isLoadingServices,
-    selectedService: state.configuration.selectedTeamcityService,
-    serviceList: state.configuration.teamcityServices,
-    serviceNotFoundMessage: state.configuration.serviceLoadErrorMessage
-  }),
-  dispatch => ({
-    onRefreshPeriodUpdate: newSeconds => dispatch(updateRefreshPeriod(newSeconds)),
-    onServiceSelect: selectedItem => dispatch(selectTeamcityService(selectedItem.service)),
-    onSave: () => dispatch(saveConfiguration()),
-    onCancel: () => dispatch(cancelConfiguration())
-  })
-)(Configuration);
-
-ConfigurationContainer.propTypes = {};
-
-
-export default ConfigurationContainer;
+export default Configuration;

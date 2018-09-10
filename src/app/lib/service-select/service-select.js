@@ -36,7 +36,7 @@ ServiceSelect.propTypes = {
   isLoading: PropTypes.bool,
   placeholder: PropTypes.string,
   selectedService: PropTypes.shape(SERVICE_PROPS),
-  serviceList: PropTypes.arrayOf(SERVICE_PROPS),
+  serviceList: PropTypes.arrayOf(PropTypes.shape(SERVICE_PROPS)),
   loadError: PropTypes.string,
   onServiceSelect: PropTypes.func.isRequired
 };
