@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import Link from '@jetbrains/ring-ui/components/link/link';
 import EmptyWidget, {ERROR_FACE, JOY_FACE} from '@jetbrains/hub-widget-ui/dist/empty-widget';
-import '@jetbrains/hub-widget-ui/dist/empty-widget.css';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import styles from './app.css';
