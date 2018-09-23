@@ -50,7 +50,7 @@ const ConfigurationContainer = connect(
   }),
   dispatch => ({
     onRefreshPeriodUpdate: newSeconds => dispatch(updateRefreshPeriod(newSeconds)),
-    onServiceSelect: selectedItem => dispatch(selectTeamcityService(selectedItem.service)),
+    onServiceSelect: service => dispatch(selectTeamcityService(service)),
     onSave: () => dispatch(saveConfiguration()),
     onCancel: () => dispatch(cancelConfiguration())
   })
