@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-09-24 10:01\n"
+"PO-Revision-Date: 2018-09-24 12:10\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
