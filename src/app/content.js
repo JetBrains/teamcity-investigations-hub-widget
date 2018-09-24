@@ -22,8 +22,12 @@ WidgetContent.propTypes = {
   children: PropTypes.node
 };
 
-const Content = ({teamcityService, investigations, investigationLoadErrorMessage, onConfigure}) => {
-  if (!teamcityService) {
+const Content = ({isInitializing, teamcityService, investigations, investigationLoadErrorMessage, onConfigure}) => {
+  if (isInitializing) {
+    return (
+      <WidgetContent/>
+    );
+  } else if (!teamcityService) {
     return (
       <WidgetContent>
         <span>

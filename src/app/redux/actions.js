@@ -22,8 +22,8 @@ export const failedInvestigationsLoading =
   createAction('Failed to load list of investigations');
 
 export const reloadInvestigations = () => async (dispatch, getState, {dashboardApi}) => {
-  const {teamcityService} = getState();
-  if (teamcityService) {
+  const {teamcityService, configuration: {isConfiguring}} = getState();
+  if (!isConfiguring && teamcityService) {
     await dispatch(startedInvestigationsLoading());
 
     const server = new TeamcityService(dashboardApi);

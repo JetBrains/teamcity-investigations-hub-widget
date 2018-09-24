@@ -23,6 +23,7 @@ const DEFAULT_PERIOD = 300;
 const reduce = createReducer({
   [setInitialSettings]: (state, {teamcityService, refreshPeriod, investigations, investigationsCount}) => ({
     ...state,
+    isInitializing: false,
     teamcityService,
     refreshPeriod: refreshPeriod || DEFAULT_PERIOD,
     investigations: investigations || [],
@@ -109,6 +110,7 @@ const reduce = createReducer({
     investigationLoadErrorMessage
   })
 }, {
+  isInitializing: true,
   teamcityService: {},
   investigations: [],
   isLoadingInvestigations: false,

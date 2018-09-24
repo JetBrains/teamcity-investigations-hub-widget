@@ -60,6 +60,7 @@ ConfigurationContainer.propTypes = {};
 
 const ContentContainer = connect(
   state => ({
+    isInitializing: state.isInitializing,
     teamcityService: state.teamcityService,
     investigations: state.investigations,
     investigationLoadErrorMessage: state.investigationLoadErrorMessage
