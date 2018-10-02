@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
-import WidgetTitle from '@jetbrains/hub-widget-ui/dist/widget-title';
-
 import Widget from './widget';
 import Configuration from './configuration';
 import Content from './content';
@@ -18,27 +16,13 @@ import {
   updateRefreshPeriod
 } from './redux/actions';
 
-const TitleContainer = connect(
-  (state, {dashboardApi}) => (state.configuration.isConfiguring
-    ? {
-      title: i18n('TeamCity Investigations'),
-      counter: -1,
-      href: null,
-      dashboardApi
-    }
-    : {
-      title: i18n('TeamCity Investigations'),
-      counter: state.investigationsCount,
-      href: state.teamcityService &&
-        state.teamcityService.homeUrl &&
-        `${state.teamcityService.homeUrl}/investigations.html`,
-      dashboardApi
-    })
-)(WidgetTitle);
-
-TitleContainer.propTypes = {
-  dashboardApi: PropTypes.object.isRequired
-};
+const getPresentationalWidgetTitle = state => ({
+  text: i18n('TeamCity Investigations'),
+  counter: state.investigationsCount,
+  href: state.teamcityService &&
+    state.teamcityService.homeUrl &&
+    `${state.teamcityService.homeUrl}/investigations.html`
+});
 
 const ConfigurationContainer = connect(
   state => ({
@@ -79,7 +63,9 @@ const WidgetContainer = connect(
     // eslint-disable-next-line no-magic-numbers
     refreshPeriod: state.refreshPeriod * 1000,
     dashboardApi,
-    Title: TitleContainer,
+    title: state.configuration.isConfiguring
+      ? i18n('TeamCity Investigations')
+      : getPresentationalWidgetTitle(state),
     Configuration: ConfigurationContainer,
     Content: ContentContainer
   }),
