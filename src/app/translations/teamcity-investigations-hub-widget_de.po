@@ -11,13 +11,13 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-09-24 16:31\n"
+"PO-Revision-Date: 2018-10-02 18:29\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
 msgstr "Build-Probleme:"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 #: src/app/configuration.js:34
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -42,7 +42,7 @@ msgstr "Ihnen sind keine<br>Untersuchungen zugeordnet"
 msgid "Oops! Something went wrong..."
 msgstr "Entschuldigung! Etwas ist schiefgegangen."
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 #: src/app/configuration.js:31
 msgid "Save"
 msgstr "Speichern"
@@ -63,8 +63,8 @@ msgstr "Sonntag|Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag"
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "So|Mo|Di|Mi|Do|Fr|Sa"
 
-#: src/app/widget-container.js:24
-#: src/app/widget-container.js:30
+#: src/app/widget-container.js:20
+#: src/app/widget-container.js:67
 msgid "TeamCity Investigations"
 msgstr "TeamCity-Untersuchungen"
 

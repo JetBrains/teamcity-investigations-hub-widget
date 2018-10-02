@@ -11,41 +11,41 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-09-24 16:31\n"
+"PO-Revision-Date: 2018-10-02 18:29\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
-msgstr ""
+msgstr "Проблемы со сборкой:"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 #: src/app/configuration.js:34
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: src/app/content.js:43
 msgid "Cannot load investigations"
-msgstr ""
+msgstr "Невозможно загрузить исследования"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
-msgstr ""
+msgstr "январь|февраль|март|апрель|май|июнь|июль|август|сентябрь|октябрь|ноябрь|декабрь"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
-msgstr ""
+msgstr "янв|фев|мар|апр|мая|июн|июл|авг|сен|окт|ноя|дек"
 
 #: src/app/content.js:53
 msgid "No investigations<br>are assigned to you"
-msgstr ""
+msgstr "Вам не назначены<br>никакие исследования"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr ""
+msgstr "К сожалению, возникла какая-то проблема..."
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 #: src/app/configuration.js:31
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
 #: src/app/configuration.js:49
 msgid "Select service"
@@ -53,51 +53,51 @@ msgstr ""
 
 #: src/app/content.js:35
 msgid "Set up..."
-msgstr ""
+msgstr "Настроить..."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
-msgstr ""
+msgstr "воскресенье|понедельник|вторник|среда|четверг|пятница|суббота"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
-msgstr ""
+msgstr "вск|пнд|втр|срд|чтв|птн|сбт"
 
-#: src/app/widget-container.js:24
-#: src/app/widget-container.js:30
+#: src/app/widget-container.js:20
+#: src/app/widget-container.js:67
 msgid "TeamCity Investigations"
-msgstr ""
+msgstr "Исследования TeamCity"
 
 #: src/app/content.js:34
 msgid "TeamCity service is not configured yet."
-msgstr ""
+msgstr "Сервис TeamCity еще не настроен."
 
 #: src/app/investigation.js:40
 msgid "Tests failed:"
-msgstr ""
+msgstr "Неудавшиеся тесты:"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:69
 #: src/app/configuration.js:12
 msgid "Widget refreshes every minute"
-msgstr ""
+msgstr "Виджет обновляется раз в минуту"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr ""
+msgstr "Виджет обновляется раз в {{minutesCount}} мин"
 
 #: src/app/configuration.js:13
 msgid "Widget refreshes every {{minutes}} minutes"
-msgstr ""
+msgstr "Виджет обновляется раз в {{minutes}} мин"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
-msgstr ""
+msgstr "ДП|ПП"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
-msgstr ""
+msgstr "{{minutesCount}} мин"
 
 #: src/app/configuration.js:10
 msgid "{{minutes}} min"
-msgstr ""
+msgstr "{{minutes}} мин"
 
