@@ -5,14 +5,13 @@ import Link from '@jetbrains/ring-ui/components/link/link';
 import EmptyWidget, {EmptyWidgetFaces} from '@jetbrains/hub-widget-ui/dist/empty-widget';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
-import styles from './app.css';
 import Investigation from './investigation';
 
 import investigationStyles from './investigation.css';
 
 function WidgetContent({children}) {
   return (
-    <div className={styles.widget}>
+    <div>
       {children}
     </div>
   );
@@ -31,7 +30,7 @@ const Content = ({isInitializing, teamcityService, investigations, investigation
     return (
       <WidgetContent>
         <span>
-          {i18n('TeamCity service is not configured yet.')}
+          {i18n('TeamCity service is not configured yet.')}{' '}
           <Link onClick={onConfigure}>{i18n('Set up...')}</Link>
         </span>
       </WidgetContent>
