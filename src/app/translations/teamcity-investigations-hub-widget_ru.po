@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-10-02 18:29\n"
+"PO-Revision-Date: 2019-01-11 11:24\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
@@ -22,7 +22,7 @@ msgstr "Проблемы со сборкой:"
 msgid "Cancel"
 msgstr "Отмена"
 
-#: src/app/content.js:43
+#: src/app/content.js:42
 msgid "Cannot load investigations"
 msgstr "Невозможно загрузить исследования"
 
@@ -34,7 +34,7 @@ msgstr "январь|февраль|март|апрель|май|июнь|июл
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "янв|фев|мар|апр|мая|июн|июл|авг|сен|окт|ноя|дек"
 
-#: src/app/content.js:53
+#: src/app/content.js:52
 msgid "No investigations<br>are assigned to you"
 msgstr "Вам не назначены<br>никакие исследования"
 
@@ -49,9 +49,9 @@ msgstr "Сохранить"
 
 #: src/app/configuration.js:49
 msgid "Select service"
-msgstr ""
+msgstr "Выберите сервис"
 
-#: src/app/content.js:35
+#: src/app/content.js:34
 msgid "Set up..."
 msgstr "Настроить..."
 
@@ -68,7 +68,7 @@ msgstr "вск|пнд|втр|срд|чтв|птн|сбт"
 msgid "TeamCity Investigations"
 msgstr "Исследования TeamCity"
 
-#: src/app/content.js:34
+#: src/app/content.js:33
 msgid "TeamCity service is not configured yet."
 msgstr "Сервис TeamCity еще не настроен."
 
