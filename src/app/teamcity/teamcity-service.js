@@ -1,6 +1,6 @@
 import convertTeamcityResponse from './teamcity-convert';
 
-const API_VER = '10.0';
+const API_VER = 'latest';
 
 export default class TeamcityService {
 
