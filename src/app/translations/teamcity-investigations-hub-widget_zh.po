@@ -11,18 +11,18 @@ msgstr ""
 "X-Crowdin-File-ID: 28503\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
-"PO-Revision-Date: 2022-02-16 13:36\n"
+"PO-Revision-Date: 2022-02-16 19:47\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
 msgstr "构建问题:"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
 #: src/app/configuration.js:34
 msgid "Cancel"
 msgstr "取消"
 
-#: src/app/content.js:42
+#: src/app/content.js:39
 msgid "Cannot load investigations"
 msgstr "无法加载调查"
 
@@ -34,7 +34,7 @@ msgstr "1 月|2 月|3 月|4 月|5 月|6 月|7 月|8 月|9 月|10 月|11 月|12 �
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "1 月|2 月|3 月|4 月|5 月|6 月|7 月|8 月|9 月|10 月|11 月|12 月"
 
-#: src/app/content.js:52
+#: src/app/content.js:49
 msgid "No investigations<br>are assigned to you"
 msgstr "没有分配给您的调查<br>"
 
@@ -42,7 +42,7 @@ msgstr "没有分配给您的调查<br>"
 msgid "Oops! Something went wrong..."
 msgstr "哎呀，出了些问题..."
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
 #: src/app/configuration.js:31
 msgid "Save"
 msgstr "保存"
@@ -51,7 +51,7 @@ msgstr "保存"
 msgid "Select service"
 msgstr "选择服务"
 
-#: src/app/content.js:34
+#: src/app/content.js:31
 msgid "Set up..."
 msgstr "设置…"
 
@@ -63,12 +63,12 @@ msgstr "星期日|星期一|星期二|星期三|星期四|星期五|星期六"
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "周日|周一|周二|周三|周四|周五|周六"
 
-#: src/app/widget-container.js:20
-#: src/app/widget-container.js:67
+#: src/app/widget-container.js:24
+#: src/app/widget-container.js:30
 msgid "TeamCity Investigations"
 msgstr "TeamCity 调查"
 
-#: src/app/content.js:33
+#: src/app/content.js:30
 msgid "TeamCity service is not configured yet."
 msgstr "TeamCity 服务尚未配置。"
 

@@ -11,18 +11,18 @@ msgstr ""
 "X-Crowdin-File-ID: 28503\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2022-02-16 13:36\n"
+"PO-Revision-Date: 2022-02-16 19:48\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
 msgstr "Problèmes de la build :"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
 #: src/app/configuration.js:34
 msgid "Cancel"
 msgstr "Annuler"
 
-#: src/app/content.js:42
+#: src/app/content.js:39
 msgid "Cannot load investigations"
 msgstr "Impossible de charger les investigations"
 
@@ -34,7 +34,7 @@ msgstr "Janvier|Février|Mars|Avril|Mai|Juin|Juillet|Août|Septembre|Octobre|Nov
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "Jan|Fév|Mar|Avr|Mai|Jun|Jul|Aoû|Sep|Oct|Nov|Déc"
 
-#: src/app/content.js:52
+#: src/app/content.js:49
 msgid "No investigations<br>are assigned to you"
 msgstr "Aucune investigation<br>ne vous est attribuée"
 
@@ -42,7 +42,7 @@ msgstr "Aucune investigation<br>ne vous est attribuée"
 msgid "Oops! Something went wrong..."
 msgstr "Oups ! Un problème est survenu..."
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
 #: src/app/configuration.js:31
 msgid "Save"
 msgstr "Enregistrer"
@@ -51,7 +51,7 @@ msgstr "Enregistrer"
 msgid "Select service"
 msgstr "Sélectionner un service"
 
-#: src/app/content.js:34
+#: src/app/content.js:31
 msgid "Set up..."
 msgstr "Configurer..."
 
@@ -63,12 +63,12 @@ msgstr "Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi"
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "Dim|Lun|Mar|Mer|Jeu|Ven|Sam"
 
-#: src/app/widget-container.js:20
-#: src/app/widget-container.js:67
+#: src/app/widget-container.js:24
+#: src/app/widget-container.js:30
 msgid "TeamCity Investigations"
 msgstr "Investigations TeamCity"
 
-#: src/app/content.js:33
+#: src/app/content.js:30
 msgid "TeamCity service is not configured yet."
 msgstr "Le service TeamCity n'est pas encore configuré."
 

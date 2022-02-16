@@ -11,18 +11,18 @@ msgstr ""
 "X-Crowdin-File-ID: 28503\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
-"PO-Revision-Date: 2022-02-16 13:36\n"
+"PO-Revision-Date: 2022-02-16 19:48\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
 msgstr "ビルドの問題："
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
 #: src/app/configuration.js:34
 msgid "Cancel"
 msgstr "取り消す"
 
-#: src/app/content.js:42
+#: src/app/content.js:39
 msgid "Cannot load investigations"
 msgstr "調査を読み込めません"
 
@@ -34,7 +34,7 @@ msgstr "1月|2月|3月|4月|5月|6月|7月|8月|9月|10月|11月|12月"
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "1月|2月|3月|4月|5月|6月|7月|8月|9月|10月|11月|12月"
 
-#: src/app/content.js:52
+#: src/app/content.js:49
 msgid "No investigations<br>are assigned to you"
 msgstr "調査はあなたに<br>割り当てられていません"
 
@@ -42,7 +42,7 @@ msgstr "調査はあなたに<br>割り当てられていません"
 msgid "Oops! Something went wrong..."
 msgstr "エラー！不明なエラーが発生しました…"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
 #: src/app/configuration.js:31
 msgid "Save"
 msgstr "保存"
@@ -51,7 +51,7 @@ msgstr "保存"
 msgid "Select service"
 msgstr "サービスの選択"
 
-#: src/app/content.js:34
+#: src/app/content.js:31
 msgid "Set up..."
 msgstr "セットアップ…"
 
@@ -63,12 +63,12 @@ msgstr "日曜日|月曜日|火曜日|水曜日|木曜日|金曜日|土曜日"
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "日|月|火|水|木|金|土"
 
-#: src/app/widget-container.js:20
-#: src/app/widget-container.js:67
+#: src/app/widget-container.js:24
+#: src/app/widget-container.js:30
 msgid "TeamCity Investigations"
 msgstr "TeamCity調査"
 
-#: src/app/content.js:33
+#: src/app/content.js:30
 msgid "TeamCity service is not configured yet."
 msgstr "TeamCityサービスはまだ構成されていません。"
 

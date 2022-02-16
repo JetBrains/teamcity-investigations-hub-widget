@@ -11,18 +11,18 @@ msgstr ""
 "X-Crowdin-File-ID: 28503\n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
-"PO-Revision-Date: 2022-02-16 13:36\n"
+"PO-Revision-Date: 2022-02-16 19:48\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
 msgstr "빌드 문제:"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
 #: src/app/configuration.js:34
 msgid "Cancel"
 msgstr "취소"
 
-#: src/app/content.js:42
+#: src/app/content.js:39
 msgid "Cannot load investigations"
 msgstr "검사를 불러올 수 없습니다"
 
@@ -34,7 +34,7 @@ msgstr "1월|2월|3월|4월|5월|6월|7월|8월|9월|10월|11월|12월"
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "1월|2월|3월|4월|5월|6월|7월|8월|9월|10월|11월|12월"
 
-#: src/app/content.js:52
+#: src/app/content.js:49
 msgid "No investigations<br>are assigned to you"
 msgstr "할당된 조사가 없습니다<br>"
 
@@ -42,7 +42,7 @@ msgstr "할당된 조사가 없습니다<br>"
 msgid "Oops! Something went wrong..."
 msgstr "죄송합니다. 오류가 발생했습니다."
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
 #: src/app/configuration.js:31
 msgid "Save"
 msgstr "저장"
@@ -51,7 +51,7 @@ msgstr "저장"
 msgid "Select service"
 msgstr "서비스 선택"
 
-#: src/app/content.js:34
+#: src/app/content.js:31
 msgid "Set up..."
 msgstr "설정..."
 
@@ -63,12 +63,12 @@ msgstr "일요일|월요일|화요일|수요일|목요일|금요일|토요일"
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "일|월|화|수|목|금|토"
 
-#: src/app/widget-container.js:20
-#: src/app/widget-container.js:67
+#: src/app/widget-container.js:24
+#: src/app/widget-container.js:30
 msgid "TeamCity Investigations"
 msgstr "TeamCity 조사"
 
-#: src/app/content.js:33
+#: src/app/content.js:30
 msgid "TeamCity service is not configured yet."
 msgstr "TeamCity 서비스가 아직 구성되지 않았습니다."
 

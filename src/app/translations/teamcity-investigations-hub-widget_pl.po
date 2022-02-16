@@ -11,18 +11,18 @@ msgstr ""
 "X-Crowdin-File-ID: 592048\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
-"PO-Revision-Date: 2022-02-16 19:23\n"
+"PO-Revision-Date: 2022-02-16 19:49\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
 msgstr ""
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
 #: src/app/configuration.js:34
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: src/app/content.js:42
+#: src/app/content.js:39
 msgid "Cannot load investigations"
 msgstr ""
 
@@ -34,7 +34,7 @@ msgstr "Styczeń|Luty|Marzec|Kwiecień|Maj|Czerwiec|Lipiec|Sierpień|Wrzesień|P
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "Sty|Lut|Mar|Kwi|Maj|Cze|Lip|Sie|Wrz|Paź|Lis|Gru"
 
-#: src/app/content.js:52
+#: src/app/content.js:49
 msgid "No investigations<br>are assigned to you"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Oops! Something went wrong..."
 msgstr "Ups. Coś poszło nie tak..."
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
 #: src/app/configuration.js:31
 msgid "Save"
 msgstr "Zapisz"
@@ -51,7 +51,7 @@ msgstr "Zapisz"
 msgid "Select service"
 msgstr "Wybierz usługę"
 
-#: src/app/content.js:34
+#: src/app/content.js:31
 msgid "Set up..."
 msgstr ""
 
@@ -63,12 +63,12 @@ msgstr "Niedziela|Poniedziałek|Wtorek|Środa|Czwartek|Piątek|Sobota"
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "N|Po|Wt|Śr|Cz|Pt|So"
 
-#: src/app/widget-container.js:20
-#: src/app/widget-container.js:67
+#: src/app/widget-container.js:24
+#: src/app/widget-container.js:30
 msgid "TeamCity Investigations"
 msgstr ""
 
-#: src/app/content.js:33
+#: src/app/content.js:30
 msgid "TeamCity service is not configured yet."
 msgstr ""
 

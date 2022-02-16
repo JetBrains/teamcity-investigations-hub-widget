@@ -11,18 +11,18 @@ msgstr ""
 "X-Crowdin-File-ID: 28503\n"
 "Language-Team: Esperanto\n"
 "Language: eo_UY\n"
-"PO-Revision-Date: 2022-02-16 13:36\n"
+"PO-Revision-Date: 2022-02-16 19:48\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
 msgstr "crwdns738250:0crwdne738250:0"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
 #: src/app/configuration.js:34
 msgid "Cancel"
 msgstr "crwdns738251:0crwdne738251:0"
 
-#: src/app/content.js:42
+#: src/app/content.js:39
 msgid "Cannot load investigations"
 msgstr "crwdns738252:0crwdne738252:0"
 
@@ -34,7 +34,7 @@ msgstr "crwdns738253:0crwdne738253:0"
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "crwdns738254:0crwdne738254:0"
 
-#: src/app/content.js:52
+#: src/app/content.js:49
 msgid "No investigations<br>are assigned to you"
 msgstr "crwdns738255:0crwdne738255:0"
 
@@ -42,7 +42,7 @@ msgstr "crwdns738255:0crwdne738255:0"
 msgid "Oops! Something went wrong..."
 msgstr "crwdns791783:0crwdne791783:0"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
 #: src/app/configuration.js:31
 msgid "Save"
 msgstr "crwdns738256:0crwdne738256:0"
@@ -51,7 +51,7 @@ msgstr "crwdns738256:0crwdne738256:0"
 msgid "Select service"
 msgstr "crwdns738257:0crwdne738257:0"
 
-#: src/app/content.js:34
+#: src/app/content.js:31
 msgid "Set up..."
 msgstr "crwdns738258:0crwdne738258:0"
 
@@ -63,12 +63,12 @@ msgstr "crwdns738259:0crwdne738259:0"
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "crwdns738260:0crwdne738260:0"
 
-#: src/app/widget-container.js:20
-#: src/app/widget-container.js:67
+#: src/app/widget-container.js:24
+#: src/app/widget-container.js:30
 msgid "TeamCity Investigations"
 msgstr "crwdns738261:0crwdne738261:0"
 
-#: src/app/content.js:33
+#: src/app/content.js:30
 msgid "TeamCity service is not configured yet."
 msgstr "crwdns738262:0crwdne738262:0"
 
