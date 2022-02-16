@@ -21,7 +21,9 @@ import {
 const DEFAULT_PERIOD = 300;
 
 const reduce = createReducer({
-  [setInitialSettings]: (state, {teamcityService, refreshPeriod, investigations, investigationsCount}) => ({
+  [setInitialSettings]: (state, {
+    teamcityService, refreshPeriod, investigations, investigationsCount
+  }) => ({
     ...state,
     isInitializing: false,
     teamcityService,

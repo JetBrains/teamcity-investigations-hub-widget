@@ -7,7 +7,7 @@
     "dist": "./dist"
   },
   "scripts": {
-    "create-component": "yo @jetbrains/ring-ui:react --path $npm_package_config_components",
+    "preinstall": "npx npm-force-resolutions",
     "build": "webpack -p --devtool sourcemap",
     "dist": "npm run build && rm -f teamcity-investigations-hub-widget.zip && zip -r -j teamcity-investigations-hub-widget.zip ./dist/*.{js,json,html}",
     "test": "karma start",
@@ -34,13 +34,13 @@
     "css-loader": "1.0.0",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
-    "hub-dashboard-addons": "0.1.0",
+    "hub-dashboard-addons": "0.2.10",
     "postcss-cssnext": "3.1.0",
     "postcss-import": "^12.0.0",
     "postcss-loader": "3.0.0",
     "postcss-modules-values-replace": "3.0.1",
     "prop-types": "15.6.2",
-    "react": "16.4.2",
+    "react": "^17.0.2",
     "react-dom": "16.4.2",
     "react-redux": "^5.0.7",
     "redbox-react": "1.6.0",
@@ -52,7 +52,6 @@
   },
   "devDependencies": {
     "@jetbrains/eslint-config": "2.0.0",
-    "@jetbrains/generator-ring-ui": "1.0.0-beta.160",
     "@jetbrains/stylelint-config": "1.3.3",
     "babel-eslint": "8.2.6",
     "chai": "4.1.2",
@@ -62,26 +61,28 @@
     "copy-webpack-plugin": "4.6.0",
     "electron": "2.0.10",
     "enzyme": "3.4.1",
-    "enzyme-adapter-react-16": "1.2.0",
+    "enzyme-adapter-react-16": "1.15.6",
     "eslint": "5.2.0",
     "json-loader": "0.5.7",
-    "karma": "2.0.5",
+    "karma": "6.3.16",
     "karma-chai-plugins": "0.9.0",
     "karma-electron-launcher": "0.2.0",
-    "karma-mocha": "1.3.0",
+    "karma-mocha": "2.0.1",
     "karma-sourcemap-loader": "0.3.7",
     "karma-teamcity-reporter": "1.1.0",
     "karma-webpack": "3.0.0",
-    "mocha": "5.1.1",
+    "mocha": "9.2.0",
     "react-test-renderer": "16.4.2",
     "sinon": "5.1.1",
     "sinon-chai": "3.2.0",
-    "stylelint": "9.4.0",
+    "stylelint": "14.5.1",
     "webpack-cli": "3.2.1",
-    "xvfb-maybe": "0.2.1",
-    "yo": "2.0.5"
+    "xvfb-maybe": "0.2.1"
   },
   "engines": {
     "node": ">=6.0.0"
+  },
+  "resolutions": {
+    "lodash": "4.17.12"
   }
 }

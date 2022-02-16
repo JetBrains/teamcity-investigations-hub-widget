@@ -21,7 +21,10 @@ WidgetContent.propTypes = {
   children: PropTypes.node
 };
 
-const Content = ({isInitializing, teamcityService, investigations, investigationLoadErrorMessage, onConfigure}) => {
+const Content = ({
+  isInitializing, teamcityService, investigations,
+  investigationLoadErrorMessage, onConfigure
+}) => {
   if (isInitializing) {
     return (
       <WidgetContent/>
@@ -49,7 +52,11 @@ const Content = ({isInitializing, teamcityService, investigations, investigation
     return (
       <WidgetContent>
         <EmptyWidget face={EmptyWidgetFaces.JOY}>
-          <div dangerouslySetInnerHTML={{__html: i18n('No investigations<br>are assigned to you')}}/>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: i18n('No investigations<br>are assigned to you')
+            }}
+          />
         </EmptyWidget>
       </WidgetContent>
     );
