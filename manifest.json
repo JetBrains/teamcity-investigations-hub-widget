@@ -1,7 +1,7 @@
 {
   "key": "teamcity-investigations",
   "name": "Investigations",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Hub dashboard widget to show the list of assigned investigations from TeamCity",
   "author": "JetBrains",
   "applicationName": "TeamCity",
