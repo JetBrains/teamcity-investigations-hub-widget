@@ -11,7 +11,7 @@ msgstr ""
 "X-Crowdin-File-ID: 592048\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
-"PO-Revision-Date: 2022-02-16 19:49\n"
+"PO-Revision-Date: 2022-04-18 22:06\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
@@ -87,7 +87,7 @@ msgstr "Widżet jest odświeżany co {{minutesCount}} min"
 
 #: src/app/configuration.js:13
 msgid "Widget refreshes every {{minutes}} minutes"
-msgstr ""
+msgstr "Widżet jest odświeżany co {{minutes}} min"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
@@ -99,5 +99,5 @@ msgstr "{{minutesCount}} min"
 
 #: src/app/configuration.js:10
 msgid "{{minutes}} min"
-msgstr ""
+msgstr "{{minutes}} min"
 

@@ -11,11 +11,11 @@ msgstr ""
 "X-Crowdin-File-ID: 592048\n"
 "Language-Team: Czech\n"
 "Language: cs_CZ\n"
-"PO-Revision-Date: 2022-02-16 19:48\n"
+"PO-Revision-Date: 2022-04-27 23:49\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
-msgstr ""
+msgstr "Problémy sestavení:"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
 #: src/app/configuration.js:34
@@ -24,7 +24,7 @@ msgstr "Zrušit"
 
 #: src/app/content.js:39
 msgid "Cannot load investigations"
-msgstr ""
+msgstr "Nelze načíst vyšetřování"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -36,7 +36,7 @@ msgstr "Led|Úno|Bře|Dub|Kvě|Čer|Čvc|Srp|Zář|Říj|Lis|Pro"
 
 #: src/app/content.js:49
 msgid "No investigations<br>are assigned to you"
-msgstr ""
+msgstr "Nejsou vám přidělena<br>žádná vyšetřování"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
@@ -53,7 +53,7 @@ msgstr "Vyberte službu"
 
 #: src/app/content.js:31
 msgid "Set up..."
-msgstr ""
+msgstr "Nastavit..."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
@@ -66,15 +66,15 @@ msgstr "Ne|Po|Út|St|Čt|Pá|So"
 #: src/app/widget-container.js:24
 #: src/app/widget-container.js:30
 msgid "TeamCity Investigations"
-msgstr ""
+msgstr "Vyšetřování TeamCity"
 
 #: src/app/content.js:30
 msgid "TeamCity service is not configured yet."
-msgstr ""
+msgstr "Služba TeamCity ještě není nakonfigurována."
 
 #: src/app/investigation.js:40
 msgid "Tests failed:"
-msgstr ""
+msgstr "Testy se nezdařily:"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:69
 #: src/app/configuration.js:12
@@ -87,7 +87,7 @@ msgstr "Widget se aktualizuje každých {{minutesCount}} minut"
 
 #: src/app/configuration.js:13
 msgid "Widget refreshes every {{minutes}} minutes"
-msgstr ""
+msgstr "Widget se aktualizuje každých {{minutes}} minut"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
@@ -99,5 +99,5 @@ msgstr "{{minutesCount}} min"
 
 #: src/app/configuration.js:10
 msgid "{{minutes}} min"
-msgstr ""
+msgstr "{{minutes}} min"
 

@@ -11,7 +11,7 @@ msgstr ""
 "X-Crowdin-File-ID: 592048\n"
 "Language-Team: Hungarian\n"
 "Language: hu_HU\n"
-"PO-Revision-Date: 2022-02-16 19:49\n"
+"PO-Revision-Date: 2022-04-27 23:49\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
@@ -40,7 +40,7 @@ msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr ""
+msgstr "Hoppá, valami hiba történt..."
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
 #: src/app/configuration.js:31
@@ -83,11 +83,11 @@ msgstr "A widget percenként frissül"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr ""
+msgstr "A widget {{minutesCount}} percenként frissül"
 
 #: src/app/configuration.js:13
 msgid "Widget refreshes every {{minutes}} minutes"
-msgstr ""
+msgstr "A widget {{minutes}} percenként frissül"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
@@ -95,9 +95,9 @@ msgstr "am|pm"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
-msgstr ""
+msgstr "{{minutesCount}} perc"
 
 #: src/app/configuration.js:10
 msgid "{{minutes}} min"
-msgstr ""
+msgstr "{{minutes}} perc"
 
