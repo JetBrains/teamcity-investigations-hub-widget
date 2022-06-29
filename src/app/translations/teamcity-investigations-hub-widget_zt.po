@@ -11,7 +11,7 @@ msgstr ""
 "X-Crowdin-File-ID: 592048\n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
-"PO-Revision-Date: 2022-05-03 23:53\n"
+"PO-Revision-Date: 2022-06-28 21:48\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
