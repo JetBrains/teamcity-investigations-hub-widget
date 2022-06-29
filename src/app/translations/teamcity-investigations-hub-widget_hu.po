@@ -11,7 +11,7 @@ msgstr ""
 "X-Crowdin-File-ID: 592048\n"
 "Language-Team: Hungarian\n"
 "Language: hu_HU\n"
-"PO-Revision-Date: 2022-06-28 20:46\n"
+"PO-Revision-Date: 2022-06-29 12:14\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
