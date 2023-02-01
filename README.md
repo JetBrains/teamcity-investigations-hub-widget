@@ -1,6 +1,5 @@
 # TeamCity Investigations Widget
 [![Build Status][ci-img]][ci-bt] [![JetBrains team project](http://jb.gg/badges/team.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
-![Team](https://jb.gg/badges/team-plastic.svg)
 
 [YouTrack](https://www.jetbrains.com/youtrack/) dashboard widget, which displays a list of TeamCity investigations that are assigned to you (the user who is currently logged into Hub). This widget can be added to dashboards and project overview pages in a Hub installation.
 
