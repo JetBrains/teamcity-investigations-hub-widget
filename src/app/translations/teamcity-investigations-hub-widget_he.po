@@ -11,38 +11,38 @@ msgstr ""
 "X-Crowdin-File-ID: 592048\n"
 "Language-Team: Hebrew\n"
 "Language: he_IL\n"
-"PO-Revision-Date: 2022-06-29 12:14\n"
+"PO-Revision-Date: 2023-08-10 16:56\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
-msgstr ""
+msgstr "בעיות הבנייה:"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 #: src/app/configuration.js:34
 msgid "Cancel"
 msgstr "ביטול"
 
-#: src/app/content.js:39
+#: src/app/content.js:45
 msgid "Cannot load investigations"
 msgstr ""
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
 msgstr "ינואר|פברואר|מרץ|אפריל|מאי|יוני|יולי|אוגוסט|ספטמבר|אוקטובר|נובמבר|דצמבר"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:115
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
-msgstr ""
+msgstr "ינו'|פבר'|מרץ|אפר'|מאי|יונ'|יול'|אוג'|ספט'|אוק'|נוב'|דצמ'"
 
-#: src/app/content.js:49
+#: src/app/content.js:57
 msgid "No investigations<br>are assigned to you"
 msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr ""
+msgstr "אופס! משהו השתבש..."
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 #: src/app/configuration.js:31
 msgid "Save"
 msgstr "שמור"
@@ -51,30 +51,30 @@ msgstr "שמור"
 msgid "Select service"
 msgstr "בחר שירות"
 
-#: src/app/content.js:31
+#: src/app/content.js:37
 msgid "Set up..."
-msgstr ""
+msgstr "הגדרה..."
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
 msgstr "ראשון|שני|שלישי|רביעי|חמישי|שישי|שבת"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:113
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "א'|ב'|ג'|ד'|ה'|ו'|ש'"
 
-#: src/app/widget-container.js:24
-#: src/app/widget-container.js:30
+#: src/app/widget-container.js:20
+#: src/app/widget-container.js:67
 msgid "TeamCity Investigations"
-msgstr ""
+msgstr "חקירות TeamCity"
 
-#: src/app/content.js:30
+#: src/app/content.js:36
 msgid "TeamCity service is not configured yet."
-msgstr ""
+msgstr "שירות TeamCity עדיין לא מוגדר."
 
 #: src/app/investigation.js:40
 msgid "Tests failed:"
-msgstr ""
+msgstr "בדיקות שנכשלו:"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:69
 #: src/app/configuration.js:12
@@ -83,15 +83,15 @@ msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr ""
+msgstr "הווידג'ט מתרענן כל {{minutesCount}} דקות"
 
 #: src/app/configuration.js:13
 msgid "Widget refreshes every {{minutes}} minutes"
 msgstr ""
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
-msgstr ""
+msgstr "לפנ\"צ|אחה\"צ"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"

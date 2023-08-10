@@ -11,30 +11,30 @@ msgstr ""
 "X-Crowdin-File-ID: 592048\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
-"PO-Revision-Date: 2022-06-29 12:14\n"
+"PO-Revision-Date: 2023-08-10 16:56\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
 msgstr "Problemi di compilazione:"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 #: src/app/configuration.js:34
 msgid "Cancel"
 msgstr "Annulla"
 
-#: src/app/content.js:39
+#: src/app/content.js:45
 msgid "Cannot load investigations"
 msgstr "Impossibile caricare le indagini"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
 msgstr "Gennaio|Febbraio|Marzo|Aprile|Maggio|Giugno|Luglio|Agosto|Settembre|Ottobre|Novembre|Dicembre"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:115
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "Gen|Feb|Mar|Apr|Mag|Giu|Lug|Ago|Set|Ott|Nov|Dic"
 
-#: src/app/content.js:49
+#: src/app/content.js:57
 msgid "No investigations<br>are assigned to you"
 msgstr "Nessuna indagine<br>assegnata a te"
 
@@ -42,7 +42,7 @@ msgstr "Nessuna indagine<br>assegnata a te"
 msgid "Oops! Something went wrong..."
 msgstr "Oops! Qualcosa è andato storto..."
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 #: src/app/configuration.js:31
 msgid "Save"
 msgstr "Salva"
@@ -51,24 +51,24 @@ msgstr "Salva"
 msgid "Select service"
 msgstr "Seleziona servizio"
 
-#: src/app/content.js:31
+#: src/app/content.js:37
 msgid "Set up..."
 msgstr "Imposta..."
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
 msgstr "Domenica|Lunedi|Martedi|Mercoledi|Giovedi|Venerdi|Sabato"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:113
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "Dom|Lun|Mar|Mer|Gio|Ven|Sab"
 
-#: src/app/widget-container.js:24
-#: src/app/widget-container.js:30
+#: src/app/widget-container.js:20
+#: src/app/widget-container.js:67
 msgid "TeamCity Investigations"
 msgstr "Indagini TeamCity"
 
-#: src/app/content.js:30
+#: src/app/content.js:36
 msgid "TeamCity service is not configured yet."
 msgstr "Il servizio TeamCity non è ancora configurato."
 
@@ -89,7 +89,7 @@ msgstr "Il widget si aggiorna ogni {{minutesCount}} minuti"
 msgid "Widget refreshes every {{minutes}} minutes"
 msgstr "Il widget si aggiorna ogni {{minutes}} minuti"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
 msgstr "am|pm"
 

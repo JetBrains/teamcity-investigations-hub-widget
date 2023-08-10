@@ -11,30 +11,30 @@ msgstr ""
 "X-Crowdin-File-ID: 592048\n"
 "Language-Team: Czech\n"
 "Language: cs_CZ\n"
-"PO-Revision-Date: 2022-06-29 12:13\n"
+"PO-Revision-Date: 2023-08-10 16:56\n"
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
 msgstr "Problémy sestavení:"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 #: src/app/configuration.js:34
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: src/app/content.js:39
+#: src/app/content.js:45
 msgid "Cannot load investigations"
 msgstr "Nelze načíst vyšetřování"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
 msgstr "Leden|Únor|Březen|Duben|Květen|Červen|Červenec|Srpen|Září|Říjen|Listopad|Prosinec"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:115
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "Led|Úno|Bře|Dub|Kvě|Čer|Čvc|Srp|Zář|Říj|Lis|Pro"
 
-#: src/app/content.js:49
+#: src/app/content.js:57
 msgid "No investigations<br>are assigned to you"
 msgstr "Nejsou vám přidělena<br>žádná vyšetřování"
 
@@ -42,7 +42,7 @@ msgstr "Nejsou vám přidělena<br>žádná vyšetřování"
 msgid "Oops! Something went wrong..."
 msgstr "Jejda! Něco se pokazilo…"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 #: src/app/configuration.js:31
 msgid "Save"
 msgstr "Uložit"
@@ -51,24 +51,24 @@ msgstr "Uložit"
 msgid "Select service"
 msgstr "Vyberte službu"
 
-#: src/app/content.js:31
+#: src/app/content.js:37
 msgid "Set up..."
 msgstr "Nastavit..."
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
 msgstr "Neděle|Pondělí|Úterý|Středa|Čtvrtek|Pátek|Sobota"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:113
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "Ne|Po|Út|St|Čt|Pá|So"
 
-#: src/app/widget-container.js:24
-#: src/app/widget-container.js:30
+#: src/app/widget-container.js:20
+#: src/app/widget-container.js:67
 msgid "TeamCity Investigations"
 msgstr "Vyšetřování TeamCity"
 
-#: src/app/content.js:30
+#: src/app/content.js:36
 msgid "TeamCity service is not configured yet."
 msgstr "Služba TeamCity ještě není nakonfigurována."
 
@@ -89,7 +89,7 @@ msgstr "Widget se aktualizuje každých {{minutesCount}} minut"
 msgid "Widget refreshes every {{minutes}} minutes"
 msgstr "Widget se aktualizuje každých {{minutes}} minut"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
 msgstr "dopol|odpol"
 
